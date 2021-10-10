@@ -26903,31 +26903,40 @@ const Register = (props)=>{
     ];
     const { setActiveUser , setToken , token  } = _react.useContext(_app.UserContext);
     const [registerError, setRegisterError] = _react.useState("");
-    const createAccount = ()=>{
+    const createAccount = async ()=>{
         _api.registerNewUser(user, pass).then((res)=>{
             setActiveUser(user);
             setToken(res.data.token);
             setRegisterError("");
-        }).then(()=>{
-            sessionStorage.setItem("token", token); // CHANGE TO SESSION BEFORE DEPLOYMENT
         }).catch((err)=>{
             console.error(err);
             setRegisterError("That username is already taken. Try another.");
+        }).finally(()=>{
+            setUser("");
+            setPass("");
         });
     // add token to session storage? Or redirect to login page
     };
-    //TODO: add min-length requirements to username & password
+    async function handleSubmit() {
+        await createAccount();
+    }
+    _react.useEffect(()=>{
+        if (token) sessionStorage.setItem("token", token);
+        if (sessionStorage.getItem("token")) history.push("/");
+    }, [
+        token
+    ]);
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
         __source: {
             fileName: "src/components/Register.jsx",
-            lineNumber: 39
+            lineNumber: 53
         },
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                 __source: {
                     fileName: "src/components/Register.jsx",
-                    lineNumber: 40
+                    lineNumber: 54
                 },
                 __self: undefined,
                 children: "Register"
@@ -26935,21 +26944,18 @@ const Register = (props)=>{
             /*#__PURE__*/ _jsxRuntime.jsxs("form", {
                 onSubmit: (e)=>{
                     e.preventDefault();
-                    createAccount();
-                    setUser("");
-                    setPass("");
-                    history.push("/");
+                    handleSubmit();
                 },
                 __source: {
                     fileName: "src/components/Register.jsx",
-                    lineNumber: 41
+                    lineNumber: 55
                 },
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                         __source: {
                             fileName: "src/components/Register.jsx",
-                            lineNumber: 50
+                            lineNumber: 61
                         },
                         __self: undefined,
                         children: [
@@ -26965,7 +26971,7 @@ const Register = (props)=>{
                                 minLength: "5",
                                 __source: {
                                     fileName: "src/components/Register.jsx",
-                                    lineNumber: 52
+                                    lineNumber: 63
                                 },
                                 __self: undefined
                             })
@@ -26974,7 +26980,7 @@ const Register = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                         __source: {
                             fileName: "src/components/Register.jsx",
-                            lineNumber: 63
+                            lineNumber: 74
                         },
                         __self: undefined,
                         children: [
@@ -26990,7 +26996,7 @@ const Register = (props)=>{
                                 minLength: "8",
                                 __source: {
                                     fileName: "src/components/Register.jsx",
-                                    lineNumber: 65
+                                    lineNumber: 76
                                 },
                                 __self: undefined
                             })
@@ -27000,7 +27006,7 @@ const Register = (props)=>{
                         type: "submit",
                         __source: {
                             fileName: "src/components/Register.jsx",
-                            lineNumber: 77
+                            lineNumber: 88
                         },
                         __self: undefined,
                         children: "REGISTER"
@@ -27010,7 +27016,7 @@ const Register = (props)=>{
             registerError ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
                 __source: {
                     fileName: "src/components/Register.jsx",
-                    lineNumber: 79
+                    lineNumber: 90
                 },
                 __self: undefined,
                 children: registerError
@@ -27018,7 +27024,7 @@ const Register = (props)=>{
         ]
     }));
 };
-_s(Register, "jxTMD3SrMfqxjOhTO44uHN0SHzE=", false, function() {
+_s(Register, "r2zMvShAC3HZlw/G/RY5UJ6NjIQ=", false, function() {
     return [_reactRouterDom.useHistory];
 });
 _c = Register;

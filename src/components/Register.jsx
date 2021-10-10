@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { UserContext } from "../App";
@@ -17,34 +17,45 @@ const Register = (props) => {
 
   const [registerError, setRegisterError] = useState("");
 
-  const createAccount = () => {
+  const createAccount = async () => {
     registerNewUser(user, pass)
       .then((res) => {
         setActiveUser(user);
         setToken(res.data.token);
         setRegisterError("");
       })
-      .then(() => {
-        sessionStorage.setItem("token", token); // CHANGE TO SESSION BEFORE DEPLOYMENT
-      })
+
       .catch((err) => {
         console.error(err);
         setRegisterError("That username is already taken. Try another.");
+      })
+      .finally(() => {
+        setUser("");
+        setPass("");
       });
     // add token to session storage? Or redirect to login page
   };
 
-  //TODO: add min-length requirements to username & password
+  async function handleSubmit() {
+    await createAccount();
+  }
+
+  useEffect(() => {
+    if (token) {
+      sessionStorage.setItem("token", token);
+    }
+    if (sessionStorage.getItem("token")) {
+      history.push("/");
+    }
+  }, [token]);
+
   return (
     <main>
       <h1>Register</h1>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          createAccount();
-          setUser("");
-          setPass("");
-          history.push("/");
+          handleSubmit();
         }}
       >
         <label>
