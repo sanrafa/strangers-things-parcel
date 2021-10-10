@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import { UserContext } from "../App";
 import { sendMessage } from "../api";
 
 const FeaturedPost = (props) => {
   const { postID } = useParams();
+  const history = useHistory();
   const { token } = useContext(UserContext);
   const [posts, featuredPost, setFeaturedPost] = [
     props.posts,
@@ -34,6 +35,7 @@ const FeaturedPost = (props) => {
         type="button"
         onClick={() => {
           setFeaturedPost(null);
+          history.push("/posts");
         }}
       >
         X

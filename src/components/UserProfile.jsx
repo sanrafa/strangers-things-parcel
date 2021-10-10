@@ -42,7 +42,7 @@ const UserProfile = () => {
           <h2 className="font-bold text-2xl">My Posts</h2>
           {myPosts.length > 0 ? (
             myPosts.map((post) => (
-              <div key={post._id} className="shadow-lg w-3/4">
+              <div key={post._id} className="shadow-lg w-3/4 p-4">
                 <h3
                   className={
                     !post.active
@@ -72,7 +72,7 @@ const UserProfile = () => {
           <h2 className="font-bold text-2xl">My Messages</h2>
           {myMessages.length > 0 ? (
             myMessages.map((msg) => (
-              <div key={msg._id} className="shadow-lg w-3/4">
+              <div key={msg._id} className="shadow-lg w-3/4 p-4">
                 <h3 className="text-red-600 font-bold">
                   To:{" "}
                   {msg.fromUser.username !== activeUser

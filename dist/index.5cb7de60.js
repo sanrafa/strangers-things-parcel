@@ -27602,6 +27602,7 @@ var _s = $RefreshSig$();
 const FeaturedPost = (props)=>{
     _s();
     const { postID  } = _reactRouterDom.useParams();
+    const history = _reactRouterDom.useHistory();
     const { token  } = _react.useContext(_app.UserContext);
     const [posts, featuredPost, setFeaturedPost] = [
         props.posts,
@@ -27622,7 +27623,7 @@ const FeaturedPost = (props)=>{
         className: featuredPost ? "flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg sticky top-0" : "flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg sticky top-0 hidden",
         __source: {
             fileName: "src/components/FeaturedPost.jsx",
-            lineNumber: 26
+            lineNumber: 27
         },
         __self: undefined,
         children: [
@@ -27630,10 +27631,11 @@ const FeaturedPost = (props)=>{
                 type: "button",
                 onClick: ()=>{
                     setFeaturedPost(null);
+                    history.push("/posts");
                 },
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 33
+                    lineNumber: 34
                 },
                 __self: undefined,
                 children: "X"
@@ -27642,7 +27644,7 @@ const FeaturedPost = (props)=>{
                 className: "font-extrabold text-2xl",
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 41
+                    lineNumber: 43
                 },
                 __self: undefined,
                 children: featuredPost ? featuredPost.title : null
@@ -27651,7 +27653,7 @@ const FeaturedPost = (props)=>{
                 className: "italic p-4",
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 44
+                    lineNumber: 46
                 },
                 __self: undefined,
                 children: featuredPost ? featuredPost.description : null
@@ -27667,7 +27669,7 @@ const FeaturedPost = (props)=>{
                 },
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 48
+                    lineNumber: 50
                 },
                 __self: undefined,
                 children: [
@@ -27675,7 +27677,7 @@ const FeaturedPost = (props)=>{
                         className: "font-bold flex flex-col",
                         __source: {
                             fileName: "src/components/FeaturedPost.jsx",
-                            lineNumber: 58
+                            lineNumber: 60
                         },
                         __self: undefined,
                         children: [
@@ -27688,7 +27690,7 @@ const FeaturedPost = (props)=>{
                                 ,
                                 __source: {
                                     fileName: "src/components/FeaturedPost.jsx",
-                                    lineNumber: 60
+                                    lineNumber: 62
                                 },
                                 __self: undefined
                             })
@@ -27699,7 +27701,7 @@ const FeaturedPost = (props)=>{
                         className: "block border-solid border-4 border-red-300 bg-red-300 font-bold text-white rounded-lg p-2 hover:shadow hover:text-red-400",
                         __source: {
                             fileName: "src/components/FeaturedPost.jsx",
-                            lineNumber: 67
+                            lineNumber: 69
                         },
                         __self: undefined,
                         children: "SEND MESSAGE"
@@ -27709,13 +27711,13 @@ const FeaturedPost = (props)=>{
             messageSent ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 76
+                    lineNumber: 78
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
                     __source: {
                         fileName: "src/components/FeaturedPost.jsx",
-                        lineNumber: 77
+                        lineNumber: 79
                     },
                     __self: undefined,
                     children: "Thank you for your message."
@@ -27724,8 +27726,8 @@ const FeaturedPost = (props)=>{
         ]
     })); // use aside element, use flex row for styling
 };
-_s(FeaturedPost, "L1PGqxMCN49+OiTRnwmiN9HQnko=", false, function() {
-    return [_reactRouterDom.useParams];
+_s(FeaturedPost, "T7w4I0fM1HvvxqB9HnrBJeVsSZ4=", false, function() {
+    return [_reactRouterDom.useParams, _reactRouterDom.useHistory];
 });
 _c = FeaturedPost;
 exports.default = FeaturedPost;
@@ -27856,7 +27858,7 @@ const UserProfile = ()=>{
                                 children: "My Posts"
                             }),
                             myPosts.length > 0 ? myPosts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                    className: "shadow-lg w-3/4",
+                                    className: "shadow-lg w-3/4 p-4",
                                     __source: {
                                         fileName: "src/components/UserProfile.jsx",
                                         lineNumber: 45
@@ -27919,7 +27921,7 @@ const UserProfile = ()=>{
                                 children: "My Messages"
                             }),
                             myMessages.length > 0 ? myMessages.map((msg)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                    className: "shadow-lg w-3/4",
+                                    className: "shadow-lg w-3/4 p-4",
                                     __source: {
                                         fileName: "src/components/UserProfile.jsx",
                                         lineNumber: 75
@@ -28026,6 +28028,7 @@ const SinglePostView = (props)=>{
         posts
     ]);
     return(/*#__PURE__*/ _jsxRuntime.jsxs("section", {
+        className: "bg-red-50 p-4 h-screen",
         __source: {
             fileName: "src/components/SinglePostView.jsx",
             lineNumber: 25
@@ -28200,6 +28203,7 @@ const SinglePostView = (props)=>{
                 ]
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs("aside", {
+                className: "mt-4",
                 __source: {
                     fileName: "src/components/SinglePostView.jsx",
                     lineNumber: 90
@@ -28207,20 +28211,22 @@ const SinglePostView = (props)=>{
                 __self: undefined,
                 children: [
                     post && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        className: "text-center text-2xl font-semibold",
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 92
+                            lineNumber: 93
                         },
                         __self: undefined,
                         children: "SEND A MESSAGE"
                     }) : null,
-                    post && !msgSent && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx(_react.Fragment, {
+                    post && !msgSent && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 94
+                            lineNumber: 96
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                            className: "flex flex-col items-center mt-4 p-4 space-y-6",
                             onSubmit: (e)=>{
                                 e.preventDefault();
                                 _api.sendMessage(postID, token, message).then(()=>{
@@ -28230,26 +28236,28 @@ const SinglePostView = (props)=>{
                             },
                             __source: {
                                 fileName: "src/components/SinglePostView.jsx",
-                                lineNumber: 95
+                                lineNumber: 97
                             },
                             __self: undefined,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                                    className: "font-bold flex flex-col w-3/4",
                                     __source: {
                                         fileName: "src/components/SinglePostView.jsx",
-                                        lineNumber: 104
+                                        lineNumber: 107
                                     },
                                     __self: undefined,
                                     children: [
                                         "Message:",
                                         /*#__PURE__*/ _jsxRuntime.jsx("textarea", {
+                                            className: "block mt-2 mb-4 shadow-inner p-4",
                                             name: "message",
                                             value: message,
                                             onChange: (e)=>setMessage(e.target.value)
                                             ,
                                             __source: {
                                                 fileName: "src/components/SinglePostView.jsx",
-                                                lineNumber: 106
+                                                lineNumber: 109
                                             },
                                             __self: undefined
                                         })
@@ -28257,9 +28265,10 @@ const SinglePostView = (props)=>{
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
                                     type: "submit",
+                                    className: "block border-solid border-4 border-red-300 bg-red-300 font-bold text-white rounded-lg p-2 hover:shadow hover:text-red-400",
                                     __source: {
                                         fileName: "src/components/SinglePostView.jsx",
-                                        lineNumber: 112
+                                        lineNumber: 116
                                     },
                                     __self: undefined,
                                     children: "SUBMIT"
@@ -28268,46 +28277,51 @@ const SinglePostView = (props)=>{
                         })
                     }) : null,
                     post && !post.isAuthor && msgSent ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                        className: "text-center",
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 117
+                            lineNumber: 126
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
                             __source: {
                                 fileName: "src/components/SinglePostView.jsx",
-                                lineNumber: 118
+                                lineNumber: 127
                             },
                             __self: undefined,
                             children: "Your message has been sent"
                         })
                     }) : null,
                     post && post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        className: "flex flex-col items-center mt-4 p-4 space-y-6",
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 123
+                            lineNumber: 132
                         },
                         __self: undefined,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                className: "text-2xl font-semibold",
                                 __source: {
                                     fileName: "src/components/SinglePostView.jsx",
-                                    lineNumber: 124
+                                    lineNumber: 133
                                 },
                                 __self: undefined,
                                 children: "Messages"
                             }),
                             post.messages.map((msg)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                    className: "bg-white p-4 rounded-lg shadow-md",
                                     __source: {
                                         fileName: "src/components/SinglePostView.jsx",
-                                        lineNumber: 126
+                                        lineNumber: 135
                                     },
                                     __self: undefined,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                                            className: "italic",
                                             __source: {
                                                 fileName: "src/components/SinglePostView.jsx",
-                                                lineNumber: 127
+                                                lineNumber: 136
                                             },
                                             __self: undefined,
                                             children: [
@@ -28318,7 +28332,7 @@ const SinglePostView = (props)=>{
                                         /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
                                                 fileName: "src/components/SinglePostView.jsx",
-                                                lineNumber: 128
+                                                lineNumber: 137
                                             },
                                             __self: undefined,
                                             children: msg.content

@@ -22,7 +22,7 @@ const SinglePostView = (props) => {
   }, [postID, posts]);
 
   return (
-    <section>
+    <section className="bg-red-50 p-4 h-screen">
       <nav className="flex justify-evenly mt-4 mb-4">
         <Link
           to="/posts"
@@ -87,12 +87,15 @@ const SinglePostView = (props) => {
           </Fragment>
         ) : null}
       </article>
-      <aside>
+      <aside className="mt-4">
         {/* Message form will show if user is not author */}
-        {post && !post.isAuthor && token ? <h2>SEND A MESSAGE</h2> : null}
+        {post && !post.isAuthor && token ? (
+          <h2 className="text-center text-2xl font-semibold">SEND A MESSAGE</h2>
+        ) : null}
         {post && !msgSent && !post.isAuthor && token ? (
-          <Fragment>
+          <div>
             <form
+              className="flex flex-col items-center mt-4 p-4 space-y-6"
               onSubmit={(e) => {
                 e.preventDefault();
                 sendMessage(postID, token, message).then(() => {
@@ -101,30 +104,36 @@ const SinglePostView = (props) => {
                 });
               }}
             >
-              <label>
+              <label className="font-bold flex flex-col w-3/4">
                 Message:
                 <textarea
+                  className="block mt-2 mb-4 shadow-inner p-4"
                   name="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </label>
-              <button type="submit">SUBMIT</button>
+              <button
+                type="submit"
+                className="block border-solid border-4 border-red-300 bg-red-300 font-bold text-white rounded-lg p-2 hover:shadow hover:text-red-400"
+              >
+                SUBMIT
+              </button>
             </form>
-          </Fragment>
+          </div>
         ) : null}
         {post && !post.isAuthor && msgSent ? (
-          <p>
+          <p className="text-center">
             <em>Your message has been sent</em>
           </p>
         ) : null}
         {/* Message pane will show if user is author */}
         {post && post.isAuthor ? (
-          <div>
-            <h2>Messages</h2>
+          <div className="flex flex-col items-center mt-4 p-4 space-y-6">
+            <h2 className="text-2xl font-semibold">Messages</h2>
             {post.messages.map((msg) => (
-              <div key={msg._id}>
-                <h3>From: {msg.fromUser.username}</h3>
+              <div key={msg._id} className="bg-white p-4 rounded-lg shadow-md">
+                <h3 className="italic">From: {msg.fromUser.username}</h3>
                 <p>{msg.content}</p>
               </div>
             ))}
