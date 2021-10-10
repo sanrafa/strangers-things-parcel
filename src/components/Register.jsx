@@ -50,17 +50,19 @@ const Register = (props) => {
   }, [token]);
 
   return (
-    <main>
-      <h1>Register</h1>
+    <main className="flex flex-col items-center space-y-6 bg-red-50 mt-20 p-4">
+      <h1 className="mt-4 text-4xl mb-4">Register</h1>
       <form
+        className="flex flex-col space-y-6"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit();
         }}
       >
-        <label>
+        <label className="font-bold">
           Username:
           <input
+            className="shadow-inner ml-4 p-2"
             type="text"
             name="username"
             required={true}
@@ -71,9 +73,10 @@ const Register = (props) => {
             minLength="5"
           ></input>
         </label>
-        <label>
+        <label className="font-bold">
           Password:
           <input
+            className="shadow-inner ml-4 p-2"
             type="password"
             name="password"
             required={true}
@@ -85,7 +88,12 @@ const Register = (props) => {
           ></input>
         </label>
 
-        <button type="submit">REGISTER</button>
+        <button
+          type="submit"
+          className="border-2 border-red-500 p-2 font-semibold bg-red-500 text-white rounded-lg hover:text-red-700 hover:shadow"
+        >
+          REGISTER
+        </button>
       </form>
       {registerError ? <p>{registerError}</p> : null}
     </main>

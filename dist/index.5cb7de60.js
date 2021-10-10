@@ -26951,6 +26951,7 @@ const Register = (props)=>{
         token
     ]);
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
+        className: "flex flex-col items-center space-y-6 bg-red-50 mt-20 p-4",
         __source: {
             fileName: "src/components/Register.jsx",
             lineNumber: 53
@@ -26958,6 +26959,7 @@ const Register = (props)=>{
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                className: "mt-4 text-4xl mb-4",
                 __source: {
                     fileName: "src/components/Register.jsx",
                     lineNumber: 54
@@ -26966,6 +26968,7 @@ const Register = (props)=>{
                 children: "Register"
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                className: "flex flex-col space-y-6",
                 onSubmit: (e)=>{
                     e.preventDefault();
                     handleSubmit();
@@ -26977,14 +26980,16 @@ const Register = (props)=>{
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold",
                         __source: {
                             fileName: "src/components/Register.jsx",
-                            lineNumber: 61
+                            lineNumber: 62
                         },
                         __self: undefined,
                         children: [
                             "Username:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "shadow-inner ml-4 p-2",
                                 type: "text",
                                 name: "username",
                                 required: true,
@@ -26995,21 +27000,23 @@ const Register = (props)=>{
                                 minLength: "5",
                                 __source: {
                                     fileName: "src/components/Register.jsx",
-                                    lineNumber: 63
+                                    lineNumber: 64
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold",
                         __source: {
                             fileName: "src/components/Register.jsx",
-                            lineNumber: 74
+                            lineNumber: 76
                         },
                         __self: undefined,
                         children: [
                             "Password:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "shadow-inner ml-4 p-2",
                                 type: "password",
                                 name: "password",
                                 required: true,
@@ -27020,7 +27027,7 @@ const Register = (props)=>{
                                 minLength: "8",
                                 __source: {
                                     fileName: "src/components/Register.jsx",
-                                    lineNumber: 76
+                                    lineNumber: 78
                                 },
                                 __self: undefined
                             })
@@ -27028,9 +27035,10 @@ const Register = (props)=>{
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("button", {
                         type: "submit",
+                        className: "border-2 border-red-500 p-2 font-semibold bg-red-500 text-white rounded-lg hover:text-red-700 hover:shadow",
                         __source: {
                             fileName: "src/components/Register.jsx",
-                            lineNumber: 88
+                            lineNumber: 91
                         },
                         __self: undefined,
                         children: "REGISTER"
@@ -27040,7 +27048,7 @@ const Register = (props)=>{
             registerError ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
                 __source: {
                     fileName: "src/components/Register.jsx",
-                    lineNumber: 90
+                    lineNumber: 98
                 },
                 __self: undefined,
                 children: registerError
@@ -27109,6 +27117,7 @@ const Login = (props)=>{
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
+        className: "flex flex-col items-center space-y-6 bg-red-50 mt-20 p-4",
         __source: {
             fileName: "src/components/Login.jsx",
             lineNumber: 49
@@ -27116,6 +27125,7 @@ const Login = (props)=>{
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                className: "mt-4 text-4xl mb-4",
                 __source: {
                     fileName: "src/components/Login.jsx",
                     lineNumber: 50
@@ -27124,6 +27134,7 @@ const Login = (props)=>{
                 children: "Login"
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                className: "flex flex-col space-y-6",
                 onSubmit: (e)=>{
                     e.preventDefault();
                     accessAccount();
@@ -27135,14 +27146,16 @@ const Login = (props)=>{
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold",
                         __source: {
                             fileName: "src/components/Login.jsx",
-                            lineNumber: 57
+                            lineNumber: 58
                         },
                         __self: undefined,
                         children: [
                             "Username:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "shadow-inner ml-4 p-2",
                                 type: "text",
                                 name: "username",
                                 required: true,
@@ -27152,21 +27165,23 @@ const Login = (props)=>{
                                 },
                                 __source: {
                                     fileName: "src/components/Login.jsx",
-                                    lineNumber: 59
+                                    lineNumber: 60
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold",
                         __source: {
                             fileName: "src/components/Login.jsx",
-                            lineNumber: 69
+                            lineNumber: 71
                         },
                         __self: undefined,
                         children: [
                             "Password:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "shadow-inner ml-4 p-2",
                                 type: "password",
                                 name: "password",
                                 required: true,
@@ -27176,21 +27191,23 @@ const Login = (props)=>{
                                 },
                                 __source: {
                                     fileName: "src/components/Login.jsx",
-                                    lineNumber: 71
+                                    lineNumber: 73
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-semibold",
                         __source: {
                             fileName: "src/components/Login.jsx",
-                            lineNumber: 81
+                            lineNumber: 84
                         },
                         __self: undefined,
                         children: [
                             "Stay logged in?",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4",
                                 type: "checkbox",
                                 name: "stayLoggedIn",
                                 value: "stayLoggedIn",
@@ -27199,7 +27216,7 @@ const Login = (props)=>{
                                 },
                                 __source: {
                                     fileName: "src/components/Login.jsx",
-                                    lineNumber: 83
+                                    lineNumber: 86
                                 },
                                 __self: undefined
                             })
@@ -27207,9 +27224,10 @@ const Login = (props)=>{
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("button", {
                         type: "submit",
+                        className: "border-2 border-red-500 p-2 font-semibold bg-red-500 text-white rounded-lg hover:text-red-700 hover:shadow",
                         __source: {
                             fileName: "src/components/Login.jsx",
-                            lineNumber: 92
+                            lineNumber: 96
                         },
                         __self: undefined,
                         children: "LOG IN"
@@ -27223,7 +27241,7 @@ const Login = (props)=>{
                 },
                 __source: {
                     fileName: "src/components/Login.jsx",
-                    lineNumber: 94
+                    lineNumber: 103
                 },
                 __self: undefined,
                 children: "Incorrect username or password"
@@ -27269,12 +27287,13 @@ const Logout = ()=>{
         sessionStorage.clear();
     }, []);
     return(/*#__PURE__*/ _jsxRuntime.jsx("h1", {
+        className: "text-center m-60 font-extrabold text-4xl",
         __source: {
             fileName: "src/components/Logout.jsx",
-            lineNumber: 16
+            lineNumber: 17
         },
         __self: undefined,
-        children: "You are now logged out"
+        children: "You are now logged out."
     }));
 };
 _s(Logout, "k+dqfeYbUkbiexnncDrE14UnnS4=");

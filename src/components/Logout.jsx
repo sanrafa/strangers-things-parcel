@@ -13,7 +13,11 @@ const Logout = () => {
     sessionStorage.clear();
   }, []);
 
-  return <h1>You are now logged out</h1>;
+  return (
+    <h1 className="text-center m-60 font-extrabold text-4xl">
+      You are now logged out.
+    </h1>
+  );
 };
 
 export default Logout;

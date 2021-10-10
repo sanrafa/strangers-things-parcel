@@ -46,17 +46,19 @@ const Login = (props) => {
   };
 
   return (
-    <main>
-      <h1>Login</h1>
+    <main className="flex flex-col items-center space-y-6 bg-red-50 mt-20 p-4">
+      <h1 className="mt-4 text-4xl mb-4">Login</h1>
       <form
+        className="flex flex-col space-y-6"
         onSubmit={(e) => {
           e.preventDefault();
           accessAccount();
         }}
       >
-        <label>
+        <label className="font-bold">
           Username:
           <input
+            className="shadow-inner ml-4 p-2"
             type="text"
             name="username"
             required={true}
@@ -66,9 +68,10 @@ const Login = (props) => {
             }}
           ></input>
         </label>
-        <label>
+        <label className="font-bold">
           Password:
           <input
+            className="shadow-inner ml-4 p-2"
             type="password"
             name="password"
             required={true}
@@ -78,9 +81,10 @@ const Login = (props) => {
             }}
           ></input>
         </label>
-        <label>
+        <label className="font-semibold">
           Stay logged in?
           <input
+            className="ml-4"
             type="checkbox"
             name="stayLoggedIn"
             value="stayLoggedIn"
@@ -89,7 +93,12 @@ const Login = (props) => {
             }}
           ></input>
         </label>
-        <button type="submit">LOG IN</button>
+        <button
+          type="submit"
+          className="border-2 border-red-500 p-2 font-semibold bg-red-500 text-white rounded-lg hover:text-red-700 hover:shadow"
+        >
+          LOG IN
+        </button>
       </form>
       <p id="login-error" style={{ display: "none" }}>
         Incorrect username or password
