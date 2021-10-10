@@ -35,7 +35,7 @@ const Posts = (props) => {
 
   return (
     <Fragment>
-      <main className="flex flex-col items-center bg-gray-50">
+      <main className="flex flex-col items-center bg-red-50">
         <header className="flex flex-col items-center">
           <h1 className="font-extrabold text-5xl mt-4 mb-6">Posts</h1>
           {token && activeUser ? (

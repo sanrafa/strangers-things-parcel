@@ -54,7 +54,7 @@ const EditPost = (props) => {
   };
 
   return (
-    <main className="bg-gray-50 mr-4 ml-4">
+    <main className="bg-red-50 mr-4 ml-4">
       <header className="flex flex-col items-center mt-4 mb-4 space-y-4">
         <h1 className="font-extrabold text-4xl">Edit Post</h1>
         <Link

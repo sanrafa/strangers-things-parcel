@@ -26434,7 +26434,7 @@ const Posts = (props)=>{
         },
         __self: undefined,
         children: /*#__PURE__*/ _jsxRuntime.jsxs("main", {
-            className: "flex flex-col items-center bg-gray-50",
+            className: "flex flex-col items-center bg-red-50",
             __source: {
                 fileName: "src/components/Posts.jsx",
                 lineNumber: 38
@@ -26807,7 +26807,7 @@ const Home = (props)=>{
     _s();
     const { activeUser , token  } = _react.useContext(_app.UserContext);
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
-        className: "flex flex-col items-center space-y-32 mt-8 text-center",
+        className: "flex flex-col items-center space-y-32 text-center bg-red-50 h-screen",
         __source: {
             fileName: "src/components/Home.jsx",
             lineNumber: 9
@@ -26858,6 +26858,7 @@ const Home = (props)=>{
                 ]
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "space-x-4",
                 __source: {
                     fileName: "src/components/Home.jsx",
                     lineNumber: 18
@@ -27349,6 +27350,7 @@ const NewPost = (props)=>{
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
+        className: "bg-red-50 mr-4 ml-4 flex flex-col items-center space-y-6 h-screen",
         __source: {
             fileName: "src/components/NewPost.jsx",
             lineNumber: 31
@@ -27356,6 +27358,7 @@ const NewPost = (props)=>{
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                className: "font-extrabold text-4xl",
                 __source: {
                     fileName: "src/components/NewPost.jsx",
                     lineNumber: 32
@@ -27364,6 +27367,7 @@ const NewPost = (props)=>{
                 children: "Make a new post"
             }),
             !postSubmitted ? /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                className: "flex flex-col space-y-6",
                 onSubmit: (e)=>{
                     e.preventDefault();
                     _api.makeNewPost(token, newPost).then((res)=>{
@@ -27389,14 +27393,16 @@ const NewPost = (props)=>{
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 52
+                            lineNumber: 53
                         },
                         __self: undefined,
                         children: [
                             "Post title:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block",
                                 type: "text",
                                 name: "title",
                                 required: true,
@@ -27404,21 +27410,23 @@ const NewPost = (props)=>{
                                 onChange: handleChange,
                                 __source: {
                                     fileName: "src/components/NewPost.jsx",
-                                    lineNumber: 54
+                                    lineNumber: 55
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 62
+                            lineNumber: 64
                         },
                         __self: undefined,
                         children: [
                             "Description:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block",
                                 type: "textarea",
                                 name: "description",
                                 required: true,
@@ -27426,21 +27434,23 @@ const NewPost = (props)=>{
                                 onChange: handleChange,
                                 __source: {
                                     fileName: "src/components/NewPost.jsx",
-                                    lineNumber: 64
+                                    lineNumber: 66
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 72
+                            lineNumber: 75
                         },
                         __self: undefined,
                         children: [
                             "Price:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block",
                                 type: "text",
                                 name: "price",
                                 required: true,
@@ -27448,21 +27458,23 @@ const NewPost = (props)=>{
                                 onChange: handleChange,
                                 __source: {
                                     fileName: "src/components/NewPost.jsx",
-                                    lineNumber: 74
+                                    lineNumber: 77
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 82
+                            lineNumber: 86
                         },
                         __self: undefined,
                         children: [
                             "Location:",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block",
                                 type: "text",
                                 name: "location",
                                 required: true,
@@ -27470,21 +27482,23 @@ const NewPost = (props)=>{
                                 onChange: handleChange,
                                 __source: {
                                     fileName: "src/components/NewPost.jsx",
-                                    lineNumber: 84
+                                    lineNumber: 88
                                 },
                                 __self: undefined
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 92
+                            lineNumber: 97
                         },
                         __self: undefined,
                         children: [
                             "Delivery available?",
                             /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 w-10",
                                 type: "checkbox",
                                 name: "willDeliver",
                                 value: newPost.willDeliver,
@@ -27495,7 +27509,7 @@ const NewPost = (props)=>{
                                 ,
                                 __source: {
                                     fileName: "src/components/NewPost.jsx",
-                                    lineNumber: 94
+                                    lineNumber: 99
                                 },
                                 __self: undefined
                             })
@@ -27503,9 +27517,10 @@ const NewPost = (props)=>{
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("button", {
                         type: "submit",
+                        className: "border-red-900 border-2 bg-red-800 text-white font-bold w-3/4 self-center rounded-lg hover:text-black",
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 103
+                            lineNumber: 109
                         },
                         __self: undefined,
                         children: "SUBMIT"
@@ -27515,20 +27530,20 @@ const NewPost = (props)=>{
             postSubmitted && newPostID ? /*#__PURE__*/ _jsxRuntime.jsxs(_react.Fragment, {
                 __source: {
                     fileName: "src/components/NewPost.jsx",
-                    lineNumber: 107
+                    lineNumber: 118
                 },
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx("p", {
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 108
+                            lineNumber: 119
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
                             __source: {
                                 fileName: "src/components/NewPost.jsx",
-                                lineNumber: 109
+                                lineNumber: 120
                             },
                             __self: undefined,
                             children: "Your post has been submitted"
@@ -27536,11 +27551,12 @@ const NewPost = (props)=>{
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("button", {
                         type: "button",
+                        className: "text-red-500 hover:text-red-700",
                         onClick: ()=>history.push(`/posts/${newPostID}/post`)
                         ,
                         __source: {
                             fileName: "src/components/NewPost.jsx",
-                            lineNumber: 111
+                            lineNumber: 122
                         },
                         __self: undefined,
                         children: "VIEW YOUR POST"
@@ -28387,7 +28403,7 @@ const EditPost = (props)=>{
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
-        className: "bg-gray-50 mr-4 ml-4",
+        className: "bg-red-50 mr-4 ml-4",
         __source: {
             fileName: "src/components/EditPost.jsx",
             lineNumber: 57

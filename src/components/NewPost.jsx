@@ -28,10 +28,11 @@ const NewPost = (props) => {
   };
 
   return (
-    <main>
-      <h1>Make a new post</h1>
+    <main className="bg-red-50 mr-4 ml-4 flex flex-col items-center space-y-6 h-screen">
+      <h1 className="font-extrabold text-4xl">Make a new post</h1>
       {!postSubmitted ? (
         <form
+          className="flex flex-col space-y-6"
           onSubmit={(e) => {
             e.preventDefault();
             makeNewPost(token, newPost).then((res) => {
@@ -49,9 +50,10 @@ const NewPost = (props) => {
             });
           }}
         >
-          <label>
+          <label className="font-bold text-xl">
             Post title:
             <input
+              className="ml-4 p-2 shadow-inner block"
               type="text"
               name="title"
               required={true}
@@ -59,9 +61,10 @@ const NewPost = (props) => {
               onChange={handleChange}
             ></input>
           </label>
-          <label>
+          <label className="font-bold text-xl">
             Description:
             <input
+              className="ml-4 p-2 shadow-inner block"
               type="textarea"
               name="description"
               required={true}
@@ -69,9 +72,10 @@ const NewPost = (props) => {
               onChange={handleChange}
             ></input>
           </label>
-          <label>
+          <label className="font-bold text-xl">
             Price:
             <input
+              className="ml-4 p-2 shadow-inner block"
               type="text"
               name="price"
               required={true}
@@ -79,9 +83,10 @@ const NewPost = (props) => {
               onChange={handleChange}
             ></input>
           </label>
-          <label>
+          <label className="font-bold text-xl">
             Location:
             <input
+              className="ml-4 p-2 shadow-inner block"
               type="text"
               name="location"
               required={true}
@@ -89,9 +94,10 @@ const NewPost = (props) => {
               onChange={handleChange}
             ></input>
           </label>
-          <label>
+          <label className="font-bold text-xl">
             Delivery available?
             <input
+              className="ml-4 w-10"
               type="checkbox"
               name="willDeliver"
               value={newPost.willDeliver}
@@ -100,7 +106,12 @@ const NewPost = (props) => {
               }
             ></input>
           </label>
-          <button type="submit">SUBMIT</button>
+          <button
+            type="submit"
+            className="border-red-900 border-2 bg-red-800 text-white font-bold w-3/4 self-center rounded-lg hover:text-black"
+          >
+            SUBMIT
+          </button>
         </form>
       ) : null}
       {postSubmitted && newPostID ? (
@@ -110,6 +121,7 @@ const NewPost = (props) => {
           </p>
           <button
             type="button"
+            className="text-red-500 hover:text-red-700"
             onClick={() => history.push(`/posts/${newPostID}/post`)}
           >
             VIEW YOUR POST

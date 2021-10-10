@@ -6,7 +6,7 @@ import { UserContext } from "../App";
 const Home = (props) => {
   const { activeUser, token } = useContext(UserContext);
   return (
-    <main className="flex flex-col items-center space-y-32 mt-8 text-center">
+    <main className="flex flex-col items-center space-y-32 text-center bg-red-50 h-screen">
       <h1 className="text-red-900 text-4xl font-extrabold p-3 mt-4">
         Welcome to{" "}
         <span className="tracking-wider underline">Stranger's Things</span>!
@@ -15,7 +15,7 @@ const Home = (props) => {
         The <span className="underline">only</span> place on the internet where
         strangers can buy each other's things.
       </p>
-      <div>
+      <div className="space-x-4">
         <Link
           to="/posts"
           className="border-solid border-4 p-2 rounded-lg border-red-800 bg-red-700 font-bold hover:shadow-lg hover:text-white"
