@@ -65,7 +65,7 @@ const Posts = (props) => {
                     key={post._id}
                     className="shadow-lg rounded-lg p-4 mb-4 bg-white"
                   >
-                    <h3 className="font-bold">{post.title}</h3>
+                    <h3 className="font-extrabold">{post.title}</h3>
                     <p>{post.description}</p>
                     {post.isAuthor === true ? (
                       <button
@@ -83,9 +83,19 @@ const Posts = (props) => {
                       </button>
                     ) : null}
                     {activeUser && !post.isAuthor ? (
-                      <Link to={`/posts/${post._id}`}>Send a message</Link>
+                      <Link
+                        to={`/posts/${post._id}`}
+                        className="font-bold text-gray-500 mr-6 hover:text-red-500"
+                      >
+                        Send a message
+                      </Link>
                     ) : null}
-                    <Link to={`/posts/${post._id}/post`}>View post</Link>
+                    <Link
+                      to={`/posts/${post._id}/post`}
+                      className="font-bold text-gray-500 hover:text-red-500"
+                    >
+                      View post
+                    </Link>
                   </div>
                 ))
               : posts && filteredPosts.length > 0

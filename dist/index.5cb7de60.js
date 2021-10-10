@@ -26514,7 +26514,7 @@ const Posts = (props)=>{
                                     __self: undefined,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx("h3", {
-                                            className: "font-bold",
+                                            className: "font-extrabold",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
                                                 lineNumber: 68
@@ -26547,6 +26547,7 @@ const Posts = (props)=>{
                                         }) : null,
                                         activeUser && !post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             to: `/posts/${post._id}`,
+                                            className: "font-bold text-gray-500 mr-6 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
                                                 lineNumber: 86
@@ -26556,9 +26557,10 @@ const Posts = (props)=>{
                                         }) : null,
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                             to: `/posts/${post._id}/post`,
+                                            className: "font-bold text-gray-500 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 88
+                                                lineNumber: 93
                                             },
                                             __self: undefined,
                                             children: "View post"
@@ -26569,7 +26571,7 @@ const Posts = (props)=>{
                                     className: "shadow-lg rounded-lg p-4 mb-4 bg-white",
                                     __source: {
                                         fileName: "src/components/Posts.jsx",
-                                        lineNumber: 93
+                                        lineNumber: 103
                                     },
                                     __self: undefined,
                                     children: [
@@ -26577,7 +26579,7 @@ const Posts = (props)=>{
                                             className: "font-extrabold",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 97
+                                                lineNumber: 107
                                             },
                                             __self: undefined,
                                             children: post.title
@@ -26585,7 +26587,7 @@ const Posts = (props)=>{
                                         /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 98
+                                                lineNumber: 108
                                             },
                                             __self: undefined,
                                             children: post.description
@@ -26600,7 +26602,7 @@ const Posts = (props)=>{
                                             ,
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 100
+                                                lineNumber: 110
                                             },
                                             __self: undefined,
                                             children: "DELETE"
@@ -26610,7 +26612,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 mr-6 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 115
+                                                lineNumber: 125
                                             },
                                             __self: undefined,
                                             children: "Send a message"
@@ -26620,7 +26622,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 122
+                                                lineNumber: 132
                                             },
                                             __self: undefined,
                                             children: "View post"
@@ -26634,14 +26636,14 @@ const Posts = (props)=>{
                             path: `${match.path}/:postID`,
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 132
+                                lineNumber: 142
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_.FeaturedPost, {
                                 posts: posts,
                                 __source: {
                                     fileName: "src/components/Posts.jsx",
-                                    lineNumber: 133
+                                    lineNumber: 143
                                 },
                                 __self: undefined
                             })
@@ -27719,146 +27721,204 @@ const UserProfile = ()=>{
         activeUser,
         token
     ]);
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
         __source: {
             fileName: "src/components/UserProfile.jsx",
             lineNumber: 30
         },
         __self: undefined,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+            /*#__PURE__*/ _jsxRuntime.jsxs("header", {
+                className: "mb-4 space-y-4",
                 __source: {
                     fileName: "src/components/UserProfile.jsx",
                     lineNumber: 31
                 },
                 __self: undefined,
-                children: "User Profile"
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        className: "text-center text-4xl font-extrabold",
+                        __source: {
+                            fileName: "src/components/UserProfile.jsx",
+                            lineNumber: 32
+                        },
+                        __self: undefined,
+                        children: "User Profile"
+                    }),
+                    loginError ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                        className: "text-center",
+                        __source: {
+                            fileName: "src/components/UserProfile.jsx",
+                            lineNumber: 33
+                        },
+                        __self: undefined,
+                        children: loginError
+                    }) : null,
+                    userData ? /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                        className: "text-center text-2xl",
+                        __source: {
+                            fileName: "src/components/UserProfile.jsx",
+                            lineNumber: 35
+                        },
+                        __self: undefined,
+                        children: [
+                            "Hello ",
+                            userData.username,
+                            "!"
+                        ]
+                    }) : null
+                ]
             }),
-            loginError ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
+            /*#__PURE__*/ _jsxRuntime.jsx("hr", {
                 __source: {
                     fileName: "src/components/UserProfile.jsx",
-                    lineNumber: 32
+                    lineNumber: 39
                 },
-                __self: undefined,
-                children: loginError
-            }) : null,
-            userData ? /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                __self: undefined
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "flex m-4 justify-around",
                 __source: {
                     fileName: "src/components/UserProfile.jsx",
-                    lineNumber: 33
+                    lineNumber: 40
                 },
                 __self: undefined,
                 children: [
-                    "Hello ",
-                    userData.username,
-                    "!"
-                ]
-            }) : null,
-            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                __source: {
-                    fileName: "src/components/UserProfile.jsx",
-                    lineNumber: 34
-                },
-                __self: undefined,
-                children: "My Posts"
-            }),
-            myPosts.length > 0 ? myPosts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    __source: {
-                        fileName: "src/components/UserProfile.jsx",
-                        lineNumber: 37
-                    },
-                    __self: undefined,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("h3", {
-                            __source: {
-                                fileName: "src/components/UserProfile.jsx",
-                                lineNumber: 38
-                            },
-                            __self: undefined,
-                            children: post.active ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                to: `/posts/${post._id}/post`,
+                    /*#__PURE__*/ _jsxRuntime.jsxs("section", {
+                        className: " flex-grow space-y-4",
+                        __source: {
+                            fileName: "src/components/UserProfile.jsx",
+                            lineNumber: 41
+                        },
+                        __self: undefined,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                className: "font-bold text-2xl",
                                 __source: {
                                     fileName: "src/components/UserProfile.jsx",
-                                    lineNumber: 40
+                                    lineNumber: 42
                                 },
                                 __self: undefined,
-                                children: post.title
-                            }) : post.title + " (inactive)"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                            __source: {
-                                fileName: "src/components/UserProfile.jsx",
-                                lineNumber: 45
-                            },
-                            __self: undefined,
-                            children: post.description
-                        })
-                    ]
-                }, post._id)
-            ) : /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                __source: {
-                    fileName: "src/components/UserProfile.jsx",
-                    lineNumber: 49
-                },
-                __self: undefined,
-                children: "Nothing to see here..."
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                __source: {
-                    fileName: "src/components/UserProfile.jsx",
-                    lineNumber: 51
-                },
-                __self: undefined,
-                children: "My Messages"
-            }),
-            myMessages.length > 0 ? myMessages.map((msg)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    __source: {
-                        fileName: "src/components/UserProfile.jsx",
-                        lineNumber: 54
-                    },
-                    __self: undefined,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
-                            __source: {
-                                fileName: "src/components/UserProfile.jsx",
-                                lineNumber: 55
-                            },
-                            __self: undefined,
-                            children: [
-                                "To:",
-                                " ",
-                                msg.fromUser.username !== activeUser ? `Me (${msg.post.title})` : msg.post.title
-                            ]
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                            __source: {
-                                fileName: "src/components/UserProfile.jsx",
-                                lineNumber: 61
-                            },
-                            __self: undefined,
-                            children: msg.content
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
-                            __source: {
-                                fileName: "src/components/UserProfile.jsx",
-                                lineNumber: 62
-                            },
-                            __self: undefined,
-                            children: [
-                                "From:",
-                                " ",
-                                msg.fromUser.username === activeUser ? "Me" : msg.fromUser.username
-                            ]
-                        })
-                    ]
-                }, msg._id)
-            ) : /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                __source: {
-                    fileName: "src/components/UserProfile.jsx",
-                    lineNumber: 71
-                },
-                __self: undefined,
-                children: "Nothing to see here..."
+                                children: "My Posts"
+                            }),
+                            myPosts.length > 0 ? myPosts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                    className: "shadow-lg w-3/4",
+                                    __source: {
+                                        fileName: "src/components/UserProfile.jsx",
+                                        lineNumber: 45
+                                    },
+                                    __self: undefined,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                                            className: !post.active ? "font-bold text-gray-600" : "font-bold text-red-700",
+                                            __source: {
+                                                fileName: "src/components/UserProfile.jsx",
+                                                lineNumber: 46
+                                            },
+                                            __self: undefined,
+                                            children: post.active ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                                to: `/posts/${post._id}/post`,
+                                                className: "hover:text-red-600",
+                                                __source: {
+                                                    fileName: "src/components/UserProfile.jsx",
+                                                    lineNumber: 54
+                                                },
+                                                __self: undefined,
+                                                children: post.title
+                                            }) : post.title + " (inactive)"
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            __source: {
+                                                fileName: "src/components/UserProfile.jsx",
+                                                lineNumber: 64
+                                            },
+                                            __self: undefined,
+                                            children: post.description
+                                        })
+                                    ]
+                                }, post._id)
+                            ) : /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                __source: {
+                                    fileName: "src/components/UserProfile.jsx",
+                                    lineNumber: 68
+                                },
+                                __self: undefined,
+                                children: "Nothing to see here..."
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("section", {
+                        className: "space-y-4 flex-grow",
+                        __source: {
+                            fileName: "src/components/UserProfile.jsx",
+                            lineNumber: 71
+                        },
+                        __self: undefined,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                className: "font-bold text-2xl",
+                                __source: {
+                                    fileName: "src/components/UserProfile.jsx",
+                                    lineNumber: 72
+                                },
+                                __self: undefined,
+                                children: "My Messages"
+                            }),
+                            myMessages.length > 0 ? myMessages.map((msg)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                    className: "shadow-lg w-3/4",
+                                    __source: {
+                                        fileName: "src/components/UserProfile.jsx",
+                                        lineNumber: 75
+                                    },
+                                    __self: undefined,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                                            className: "text-red-600 font-bold",
+                                            __source: {
+                                                fileName: "src/components/UserProfile.jsx",
+                                                lineNumber: 76
+                                            },
+                                            __self: undefined,
+                                            children: [
+                                                "To:",
+                                                " ",
+                                                msg.fromUser.username !== activeUser ? `Me (${msg.post.title})` : msg.post.title
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            __source: {
+                                                fileName: "src/components/UserProfile.jsx",
+                                                lineNumber: 82
+                                            },
+                                            __self: undefined,
+                                            children: msg.content
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsxs("h4", {
+                                            className: "text-red-900",
+                                            __source: {
+                                                fileName: "src/components/UserProfile.jsx",
+                                                lineNumber: 83
+                                            },
+                                            __self: undefined,
+                                            children: [
+                                                "From:",
+                                                " ",
+                                                msg.fromUser.username === activeUser ? "Me" : msg.fromUser.username
+                                            ]
+                                        })
+                                    ]
+                                }, msg._id)
+                            ) : /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                __source: {
+                                    fileName: "src/components/UserProfile.jsx",
+                                    lineNumber: 92
+                                },
+                                __self: undefined,
+                                children: "Nothing to see here..."
+                            })
+                        ]
+                    })
+                ]
             })
         ]
     }));
