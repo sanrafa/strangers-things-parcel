@@ -26412,6 +26412,8 @@ const Posts = (props)=>{
     const { token , activeUser  } = _react.useContext(_app.UserContext);
     const [searchTerm, setSearchTerm] = _react.useState("");
     const [filteredPosts, setFilteredPosts] = _react.useState([]);
+    const [featuredPost, setFeaturedPost] = _react.useState({
+    });
     const handleSearch = (search, postStr)=>{
         function escRegEx(str) {
             return str.replace(/[-\\^$*+?.()|[\]{}]/g, "");
@@ -26430,14 +26432,14 @@ const Posts = (props)=>{
     return(/*#__PURE__*/ _jsxRuntime.jsx(_react.Fragment, {
         __source: {
             fileName: "src/components/Posts.jsx",
-            lineNumber: 37
+            lineNumber: 38
         },
         __self: undefined,
         children: /*#__PURE__*/ _jsxRuntime.jsxs("main", {
             className: "flex flex-col items-center bg-red-50",
             __source: {
                 fileName: "src/components/Posts.jsx",
-                lineNumber: 38
+                lineNumber: 39
             },
             __self: undefined,
             children: [
@@ -26445,7 +26447,7 @@ const Posts = (props)=>{
                     className: "flex flex-col items-center",
                     __source: {
                         fileName: "src/components/Posts.jsx",
-                        lineNumber: 39
+                        lineNumber: 40
                     },
                     __self: undefined,
                     children: [
@@ -26453,7 +26455,7 @@ const Posts = (props)=>{
                             className: "font-extrabold text-5xl mt-4 mb-6",
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 40
+                                lineNumber: 41
                             },
                             __self: undefined,
                             children: "Posts"
@@ -26463,7 +26465,7 @@ const Posts = (props)=>{
                             className: "hover:text-black border-solid border-4 rounded-lg border-red-500 p-2 mb-4 bg-red-500 text-white font-bold",
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 42
+                                lineNumber: 43
                             },
                             __self: undefined,
                             children: "Create new post"
@@ -26471,7 +26473,7 @@ const Posts = (props)=>{
                         /*#__PURE__*/ _jsxRuntime.jsx("form", {
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 50
+                                lineNumber: 51
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("input", {
@@ -26483,7 +26485,7 @@ const Posts = (props)=>{
                                 className: "text-center p-1 mb-4 shadow-inner bg-white rounded-lg focus:shadow-lg",
                                 __source: {
                                     fileName: "src/components/Posts.jsx",
-                                    lineNumber: 51
+                                    lineNumber: 52
                                 },
                                 __self: undefined
                             })
@@ -26494,7 +26496,7 @@ const Posts = (props)=>{
                     className: "flex flex-1 items-baseline ml-4 mr-4 space-x-4",
                     __source: {
                         fileName: "src/components/Posts.jsx",
-                        lineNumber: 60
+                        lineNumber: 61
                     },
                     __self: undefined,
                     children: [
@@ -26502,14 +26504,14 @@ const Posts = (props)=>{
                             className: "flex flex-col",
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 61
+                                lineNumber: 62
                             },
                             __self: undefined,
                             children: posts && !(filteredPosts.length > 0) ? posts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                     className: "shadow-lg rounded-lg p-4 mb-4 bg-white",
                                     __source: {
                                         fileName: "src/components/Posts.jsx",
-                                        lineNumber: 64
+                                        lineNumber: 65
                                     },
                                     __self: undefined,
                                     children: [
@@ -26517,7 +26519,7 @@ const Posts = (props)=>{
                                             className: "font-extrabold",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 68
+                                                lineNumber: 69
                                             },
                                             __self: undefined,
                                             children: post.title
@@ -26525,7 +26527,7 @@ const Posts = (props)=>{
                                         /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 69
+                                                lineNumber: 70
                                             },
                                             __self: undefined,
                                             children: post.description
@@ -26540,7 +26542,7 @@ const Posts = (props)=>{
                                             ,
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 71
+                                                lineNumber: 72
                                             },
                                             __self: undefined,
                                             children: "DELETE"
@@ -26550,7 +26552,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 mr-6 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 86
+                                                lineNumber: 87
                                             },
                                             __self: undefined,
                                             children: "Send a message"
@@ -26560,7 +26562,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 93
+                                                lineNumber: 94
                                             },
                                             __self: undefined,
                                             children: "View post"
@@ -26571,7 +26573,7 @@ const Posts = (props)=>{
                                     className: "shadow-lg rounded-lg p-4 mb-4 bg-white space-y-4",
                                     __source: {
                                         fileName: "src/components/Posts.jsx",
-                                        lineNumber: 103
+                                        lineNumber: 104
                                     },
                                     __self: undefined,
                                     children: [
@@ -26579,7 +26581,7 @@ const Posts = (props)=>{
                                             className: "font-extrabold",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 107
+                                                lineNumber: 108
                                             },
                                             __self: undefined,
                                             children: post.title
@@ -26587,7 +26589,7 @@ const Posts = (props)=>{
                                         /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 108
+                                                lineNumber: 109
                                             },
                                             __self: undefined,
                                             children: post.description
@@ -26603,7 +26605,7 @@ const Posts = (props)=>{
                                             ,
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 110
+                                                lineNumber: 111
                                             },
                                             __self: undefined,
                                             children: "DELETE"
@@ -26613,7 +26615,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 mr-6 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 126
+                                                lineNumber: 127
                                             },
                                             __self: undefined,
                                             children: "Send a message"
@@ -26623,7 +26625,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 133
+                                                lineNumber: 134
                                             },
                                             __self: undefined,
                                             children: "View post"
@@ -26637,14 +26639,16 @@ const Posts = (props)=>{
                             path: `${match.path}/:postID`,
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 143
+                                lineNumber: 144
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_.FeaturedPost, {
                                 posts: posts,
+                                featuredPost: featuredPost,
+                                setFeaturedPost: setFeaturedPost,
                                 __source: {
                                     fileName: "src/components/Posts.jsx",
-                                    lineNumber: 144
+                                    lineNumber: 145
                                 },
                                 __self: undefined
                             })
@@ -26655,7 +26659,7 @@ const Posts = (props)=>{
         })
     }));
 };
-_s(Posts, "PRpG5pMcdfvlcwzN4oVRlBl+8Io=", false, function() {
+_s(Posts, "Y6FDI/9sLImhd1+4NUFQHL2S7U4=", false, function() {
     return [_reactRouterDom.useRouteMatch];
 });
 _c = Posts;
@@ -27599,9 +27603,11 @@ const FeaturedPost = (props)=>{
     _s();
     const { postID  } = _reactRouterDom.useParams();
     const { token  } = _react.useContext(_app.UserContext);
-    const posts = props.posts;
-    const [featuredPost, setFeaturedPost] = _react.useState({
-    });
+    const [posts, featuredPost, setFeaturedPost] = [
+        props.posts,
+        props.featuredPost,
+        props.setFeaturedPost, 
+    ];
     const [message, setMessage] = _react.useState("");
     const [messageSent, setMessageSent] = _react.useState(false);
     _react.useEffect(()=>{
@@ -27613,18 +27619,30 @@ const FeaturedPost = (props)=>{
         postID
     ]);
     return(/*#__PURE__*/ _jsxRuntime.jsxs("aside", {
-        className: "flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg",
+        className: featuredPost ? "flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg sticky top-0" : "flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg sticky top-0 hidden",
         __source: {
             fileName: "src/components/FeaturedPost.jsx",
-            lineNumber: 23
+            lineNumber: 26
         },
         __self: undefined,
         children: [
+            /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                type: "button",
+                onClick: ()=>{
+                    setFeaturedPost(null);
+                },
+                __source: {
+                    fileName: "src/components/FeaturedPost.jsx",
+                    lineNumber: 33
+                },
+                __self: undefined,
+                children: "X"
+            }),
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                 className: "font-extrabold text-2xl",
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 24
+                    lineNumber: 41
                 },
                 __self: undefined,
                 children: featuredPost ? featuredPost.title : null
@@ -27633,7 +27651,7 @@ const FeaturedPost = (props)=>{
                 className: "italic p-4",
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 27
+                    lineNumber: 44
                 },
                 __self: undefined,
                 children: featuredPost ? featuredPost.description : null
@@ -27649,7 +27667,7 @@ const FeaturedPost = (props)=>{
                 },
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 31
+                    lineNumber: 48
                 },
                 __self: undefined,
                 children: [
@@ -27657,7 +27675,7 @@ const FeaturedPost = (props)=>{
                         className: "font-bold flex flex-col",
                         __source: {
                             fileName: "src/components/FeaturedPost.jsx",
-                            lineNumber: 41
+                            lineNumber: 58
                         },
                         __self: undefined,
                         children: [
@@ -27670,7 +27688,7 @@ const FeaturedPost = (props)=>{
                                 ,
                                 __source: {
                                     fileName: "src/components/FeaturedPost.jsx",
-                                    lineNumber: 43
+                                    lineNumber: 60
                                 },
                                 __self: undefined
                             })
@@ -27681,7 +27699,7 @@ const FeaturedPost = (props)=>{
                         className: "block border-solid border-4 border-red-300 bg-red-300 font-bold text-white rounded-lg p-2 hover:shadow hover:text-red-400",
                         __source: {
                             fileName: "src/components/FeaturedPost.jsx",
-                            lineNumber: 50
+                            lineNumber: 67
                         },
                         __self: undefined,
                         children: "SEND MESSAGE"
@@ -27691,13 +27709,13 @@ const FeaturedPost = (props)=>{
             messageSent ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
-                    lineNumber: 59
+                    lineNumber: 76
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
                     __source: {
                         fileName: "src/components/FeaturedPost.jsx",
-                        lineNumber: 60
+                        lineNumber: 77
                     },
                     __self: undefined,
                     children: "Thank you for your message."
@@ -27706,7 +27724,7 @@ const FeaturedPost = (props)=>{
         ]
     })); // use aside element, use flex row for styling
 };
-_s(FeaturedPost, "CRiGUvb/JCI0l4AY8684d7V3fnI=", false, function() {
+_s(FeaturedPost, "L1PGqxMCN49+OiTRnwmiN9HQnko=", false, function() {
     return [_reactRouterDom.useParams];
 });
 _c = FeaturedPost;

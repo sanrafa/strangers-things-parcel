@@ -14,6 +14,7 @@ const Posts = (props) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [featuredPost, setFeaturedPost] = useState({});
 
   const handleSearch = (search, postStr) => {
     function escRegEx(str) {
@@ -141,7 +142,11 @@ const Posts = (props) => {
               : null}
           </section>
           <Route exact path={`${match.path}/:postID`}>
-            <FeaturedPost posts={posts} />
+            <FeaturedPost
+              posts={posts}
+              featuredPost={featuredPost}
+              setFeaturedPost={setFeaturedPost}
+            />
           </Route>
         </div>
       </main>

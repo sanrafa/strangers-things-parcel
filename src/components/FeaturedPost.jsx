@@ -7,9 +7,12 @@ import { sendMessage } from "../api";
 const FeaturedPost = (props) => {
   const { postID } = useParams();
   const { token } = useContext(UserContext);
-  const posts = props.posts;
+  const [posts, featuredPost, setFeaturedPost] = [
+    props.posts,
+    props.featuredPost,
+    props.setFeaturedPost,
+  ];
 
-  const [featuredPost, setFeaturedPost] = useState({});
   const [message, setMessage] = useState("");
   const [messageSent, setMessageSent] = useState(false);
 
@@ -20,7 +23,21 @@ const FeaturedPost = (props) => {
   }, [postID]);
 
   return (
-    <aside className="flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg">
+    <aside
+      className={
+        featuredPost
+          ? "flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg sticky top-0"
+          : "flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg sticky top-0 hidden"
+      }
+    >
+      <button
+        type="button"
+        onClick={() => {
+          setFeaturedPost(null);
+        }}
+      >
+        X
+      </button>
       <h1 className="font-extrabold text-2xl">
         {featuredPost ? featuredPost.title : null}
       </h1>
