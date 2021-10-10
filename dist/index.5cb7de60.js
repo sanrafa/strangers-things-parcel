@@ -28368,191 +28368,208 @@ const EditPost = (props)=>{
         });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
+        className: "bg-gray-50 mr-4 ml-4",
         __source: {
             fileName: "src/components/EditPost.jsx",
             lineNumber: 57
         },
         __self: undefined,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+            /*#__PURE__*/ _jsxRuntime.jsxs("header", {
+                className: "flex flex-col items-center mt-4 mb-4 space-y-4",
                 __source: {
                     fileName: "src/components/EditPost.jsx",
                     lineNumber: 58
                 },
                 __self: undefined,
-                children: "Edit Post"
-            }),
-            post && !edited ? /*#__PURE__*/ _jsxRuntime.jsxs(_react.Fragment, {
-                __source: {
-                    fileName: "src/components/EditPost.jsx",
-                    lineNumber: 61
-                },
-                __self: undefined,
                 children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                        to: `/posts/${postID}/post`,
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        className: "font-extrabold text-4xl",
                         __source: {
                             fileName: "src/components/EditPost.jsx",
-                            lineNumber: 62
+                            lineNumber: 59
+                        },
+                        __self: undefined,
+                        children: "Edit Post"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: `/posts/${postID}/post`,
+                        className: "border-2 border-red-500 bg-red-500 p-2 rounded-lg text-center text-white font-bold w-1/12 hover:shadow-md hover:text-red-400",
+                        __source: {
+                            fileName: "src/components/EditPost.jsx",
+                            lineNumber: 60
                         },
                         __self: undefined,
                         children: "Cancel"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs("form", {
-                        onSubmit: (e)=>{
-                            e.preventDefault();
-                            handleSubmit();
-                        },
+                    })
+                ]
+            }),
+            post && !edited ? /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                className: "flex flex-col space-y-6",
+                onSubmit: (e)=>{
+                    e.preventDefault();
+                    handleSubmit();
+                },
+                __source: {
+                    fileName: "src/components/EditPost.jsx",
+                    lineNumber: 69
+                },
+                __self: undefined,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
                         __source: {
                             fileName: "src/components/EditPost.jsx",
-                            lineNumber: 63
+                            lineNumber: 76
                         },
                         __self: undefined,
                         children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                            "Post title:",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block w-3/6",
+                                type: "text",
+                                name: "title",
+                                value: editedPost.title,
+                                onChange: handleChange,
+                                required: true,
                                 __source: {
                                     fileName: "src/components/EditPost.jsx",
-                                    lineNumber: 69
+                                    lineNumber: 78
                                 },
-                                __self: undefined,
-                                children: [
-                                    "Post title:",
-                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                                        type: "text",
-                                        name: "title",
-                                        value: editedPost.title,
-                                        onChange: handleChange,
-                                        required: true,
-                                        __source: {
-                                            fileName: "src/components/EditPost.jsx",
-                                            lineNumber: 71
-                                        },
-                                        __self: undefined
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
-                                __source: {
-                                    fileName: "src/components/EditPost.jsx",
-                                    lineNumber: 79
-                                },
-                                __self: undefined,
-                                children: [
-                                    "Description:",
-                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                                        type: "textarea",
-                                        name: "description",
-                                        value: editedPost.description,
-                                        onChange: handleChange,
-                                        required: true,
-                                        __source: {
-                                            fileName: "src/components/EditPost.jsx",
-                                            lineNumber: 81
-                                        },
-                                        __self: undefined
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                                __self: undefined
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
+                        __source: {
+                            fileName: "src/components/EditPost.jsx",
+                            lineNumber: 87
+                        },
+                        __self: undefined,
+                        children: [
+                            "Description:",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block w-9/12",
+                                type: "textarea",
+                                name: "description",
+                                value: editedPost.description,
+                                onChange: handleChange,
+                                required: true,
                                 __source: {
                                     fileName: "src/components/EditPost.jsx",
                                     lineNumber: 89
                                 },
-                                __self: undefined,
-                                children: [
-                                    "Price:",
-                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                                        type: "text",
-                                        name: "price",
-                                        value: editedPost.price,
-                                        onChange: handleChange,
-                                        required: true,
-                                        __source: {
-                                            fileName: "src/components/EditPost.jsx",
-                                            lineNumber: 91
-                                        },
-                                        __self: undefined
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
-                                __source: {
-                                    fileName: "src/components/EditPost.jsx",
-                                    lineNumber: 99
-                                },
-                                __self: undefined,
-                                children: [
-                                    "Location:",
-                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                                        type: "text",
-                                        name: "location",
-                                        value: editedPost.location,
-                                        onChange: handleChange,
-                                        required: true,
-                                        __source: {
-                                            fileName: "src/components/EditPost.jsx",
-                                            lineNumber: 101
-                                        },
-                                        __self: undefined
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("label", {
-                                __source: {
-                                    fileName: "src/components/EditPost.jsx",
-                                    lineNumber: 109
-                                },
-                                __self: undefined,
-                                children: [
-                                    "Delivery available?",
-                                    /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                                        type: "checkbox",
-                                        name: "willDeliver",
-                                        value: editedPost.willDeliver,
-                                        defaultChecked: post.willDeliver,
-                                        onChange: ()=>setEditedPost({
-                                                ...editedPost,
-                                                willDeliver: !editedPost.willDeliver
-                                            })
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/EditPost.jsx",
-                                            lineNumber: 111
-                                        },
-                                        __self: undefined
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                type: "submit",
-                                __source: {
-                                    fileName: "src/components/EditPost.jsx",
-                                    lineNumber: 124
-                                },
-                                __self: undefined,
-                                children: "SUBMIT"
+                                __self: undefined
                             })
                         ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
+                        __source: {
+                            fileName: "src/components/EditPost.jsx",
+                            lineNumber: 98
+                        },
+                        __self: undefined,
+                        children: [
+                            "Price:",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block",
+                                type: "text",
+                                name: "price",
+                                value: editedPost.price,
+                                onChange: handleChange,
+                                required: true,
+                                __source: {
+                                    fileName: "src/components/EditPost.jsx",
+                                    lineNumber: 100
+                                },
+                                __self: undefined
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
+                        __source: {
+                            fileName: "src/components/EditPost.jsx",
+                            lineNumber: 109
+                        },
+                        __self: undefined,
+                        children: [
+                            "Location:",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 p-2 shadow-inner block",
+                                type: "text",
+                                name: "location",
+                                value: editedPost.location,
+                                onChange: handleChange,
+                                required: true,
+                                __source: {
+                                    fileName: "src/components/EditPost.jsx",
+                                    lineNumber: 111
+                                },
+                                __self: undefined
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs("label", {
+                        className: "font-bold text-xl",
+                        __source: {
+                            fileName: "src/components/EditPost.jsx",
+                            lineNumber: 120
+                        },
+                        __self: undefined,
+                        children: [
+                            "Delivery available?",
+                            /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                                className: "ml-4 w-10",
+                                type: "checkbox",
+                                name: "willDeliver",
+                                value: editedPost.willDeliver,
+                                defaultChecked: post.willDeliver,
+                                onChange: ()=>setEditedPost({
+                                        ...editedPost,
+                                        willDeliver: !editedPost.willDeliver
+                                    })
+                                ,
+                                __source: {
+                                    fileName: "src/components/EditPost.jsx",
+                                    lineNumber: 122
+                                },
+                                __self: undefined
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        type: "submit",
+                        className: "border-red-900 border-2 bg-red-800 text-white font-bold w-3/4 self-center hover:text-black",
+                        __source: {
+                            fileName: "src/components/EditPost.jsx",
+                            lineNumber: 136
+                        },
+                        __self: undefined,
+                        children: "SUBMIT"
                     })
                 ]
             }) : null,
             edited ? /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "text-center",
                 __source: {
                     fileName: "src/components/EditPost.jsx",
-                    lineNumber: 129
+                    lineNumber: 145
                 },
                 __self: undefined,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx("p", {
                         __source: {
                             fileName: "src/components/EditPost.jsx",
-                            lineNumber: 130
+                            lineNumber: 146
                         },
                         __self: undefined,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
                             __source: {
                                 fileName: "src/components/EditPost.jsx",
-                                lineNumber: 131
+                                lineNumber: 147
                             },
                             __self: undefined,
                             children: "Your post has been edited."
@@ -28561,21 +28578,24 @@ const EditPost = (props)=>{
                     /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                         __source: {
                             fileName: "src/components/EditPost.jsx",
-                            lineNumber: 133
+                            lineNumber: 149
                         },
                         __self: undefined,
                         children: [
-                            "Click ",
+                            "Click",
+                            " ",
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                 to: `/posts/${postID}/post`,
+                                className: "text-red-500 hover:text-red-700",
                                 __source: {
                                     fileName: "src/components/EditPost.jsx",
-                                    lineNumber: 134
+                                    lineNumber: 151
                                 },
                                 __self: undefined,
                                 children: "HERE"
                             }),
-                            " to view your post."
+                            " ",
+                            "to view your post."
                         ]
                     })
                 ]

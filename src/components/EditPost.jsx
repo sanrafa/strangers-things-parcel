@@ -54,85 +54,107 @@ const EditPost = (props) => {
   };
 
   return (
-    <main>
-      <h1>Edit Post</h1>
+    <main className="bg-gray-50 mr-4 ml-4">
+      <header className="flex flex-col items-center mt-4 mb-4 space-y-4">
+        <h1 className="font-extrabold text-4xl">Edit Post</h1>
+        <Link
+          to={`/posts/${postID}/post`}
+          className="border-2 border-red-500 bg-red-500 p-2 rounded-lg text-center text-white font-bold w-1/12 hover:shadow-md hover:text-red-400"
+        >
+          Cancel
+        </Link>
+      </header>
 
       {post && !edited ? (
-        <Fragment>
-          <Link to={`/posts/${postID}/post`}>Cancel</Link>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit();
-            }}
+        <form
+          className="flex flex-col space-y-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+        >
+          <label className="font-bold text-xl">
+            Post title:
+            <input
+              className="ml-4 p-2 shadow-inner block w-3/6"
+              type="text"
+              name="title"
+              value={editedPost.title}
+              onChange={handleChange}
+              required={true}
+            ></input>
+          </label>
+          <label className="font-bold text-xl">
+            Description:
+            <input
+              className="ml-4 p-2 shadow-inner block w-9/12"
+              type="textarea"
+              name="description"
+              value={editedPost.description}
+              onChange={handleChange}
+              required={true}
+            ></input>
+          </label>
+          <label className="font-bold text-xl">
+            Price:
+            <input
+              className="ml-4 p-2 shadow-inner block"
+              type="text"
+              name="price"
+              value={editedPost.price}
+              onChange={handleChange}
+              required={true}
+            ></input>
+          </label>
+          <label className="font-bold text-xl">
+            Location:
+            <input
+              className="ml-4 p-2 shadow-inner block"
+              type="text"
+              name="location"
+              value={editedPost.location}
+              onChange={handleChange}
+              required={true}
+            ></input>
+          </label>
+          <label className="font-bold text-xl">
+            Delivery available?
+            <input
+              className="ml-4 w-10"
+              type="checkbox"
+              name="willDeliver"
+              value={editedPost.willDeliver}
+              defaultChecked={post.willDeliver}
+              onChange={() =>
+                setEditedPost({
+                  ...editedPost,
+                  willDeliver: !editedPost.willDeliver,
+                })
+              }
+            ></input>
+          </label>
+          <button
+            type="submit"
+            className="border-red-900 border-2 bg-red-800 text-white font-bold w-3/4 self-center hover:text-black"
           >
-            <label>
-              Post title:
-              <input
-                type="text"
-                name="title"
-                value={editedPost.title}
-                onChange={handleChange}
-                required={true}
-              ></input>
-            </label>
-            <label>
-              Description:
-              <input
-                type="textarea"
-                name="description"
-                value={editedPost.description}
-                onChange={handleChange}
-                required={true}
-              ></input>
-            </label>
-            <label>
-              Price:
-              <input
-                type="text"
-                name="price"
-                value={editedPost.price}
-                onChange={handleChange}
-                required={true}
-              ></input>
-            </label>
-            <label>
-              Location:
-              <input
-                type="text"
-                name="location"
-                value={editedPost.location}
-                onChange={handleChange}
-                required={true}
-              ></input>
-            </label>
-            <label>
-              Delivery available?
-              <input
-                type="checkbox"
-                name="willDeliver"
-                value={editedPost.willDeliver}
-                defaultChecked={post.willDeliver}
-                onChange={() =>
-                  setEditedPost({
-                    ...editedPost,
-                    willDeliver: !editedPost.willDeliver,
-                  })
-                }
-              ></input>
-            </label>
-            <button type="submit">SUBMIT</button>
-          </form>
-        </Fragment>
+            SUBMIT
+          </button>
+        </form>
       ) : null}
       {edited ? (
-        <div>
+        <div className="text-center">
           <p>
             <em>Your post has been edited.</em>
           </p>
           <p>
-            Click <Link to={`/posts/${postID}/post`}>HERE</Link> to view your
-            post.
+            Click{" "}
+            <Link
+              to={`/posts/${postID}/post`}
+              className="text-red-500 hover:text-red-700"
+            >
+              HERE
+            </Link>{" "}
+            to view your post.
           </p>
         </div>
       ) : null}
