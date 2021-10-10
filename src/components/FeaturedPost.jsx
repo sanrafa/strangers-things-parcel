@@ -20,11 +20,16 @@ const FeaturedPost = (props) => {
   }, [postID]);
 
   return (
-    <aside>
-      <h1>{featuredPost ? featuredPost.title : null}</h1>
-      <p>{featuredPost ? featuredPost.description : null}</p>
+    <aside className="flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg">
+      <h1 className="font-extrabold text-lg">
+        {featuredPost ? featuredPost.title : null}
+      </h1>
+      <p className="italic p-4">
+        {featuredPost ? featuredPost.description : null}
+      </p>
       {featuredPost && !featuredPost.isAuthor && !messageSent ? (
         <form
+          className="flex flex-col w-3/4"
           onSubmit={(e) => {
             e.preventDefault();
             sendMessage(postID, token, message).then(() => {
@@ -33,15 +38,21 @@ const FeaturedPost = (props) => {
             });
           }}
         >
-          <label>
+          <label className="font-bold flex flex-col">
             Message:
             <textarea
+              className="block mt-2 mb-4 shadow-inner"
               name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </label>
-          <button type="submit">SEND MESSAGE</button>
+          <button
+            type="submit"
+            className="block border-solid border-4 border-red-300 bg-red-300 font-bold text-white rounded-lg p-2 hover:shadow hover:text-red-400"
+          >
+            SEND MESSAGE
+          </button>
         </form>
       ) : null}
       {messageSent ? (
