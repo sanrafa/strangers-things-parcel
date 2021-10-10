@@ -27979,260 +27979,304 @@ const SinglePostView = (props)=>{
         },
         __self: undefined,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: "/posts",
+            /*#__PURE__*/ _jsxRuntime.jsxs("nav", {
+                className: "flex justify-evenly mt-4 mb-4",
                 __source: {
                     fileName: "src/components/SinglePostView.jsx",
                     lineNumber: 26
                 },
                 __self: undefined,
-                children: "Return to all posts"
-            }),
-            post && post.isAuthor && !deletedPost ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                to: `/posts/${postID}/edit`,
-                __source: {
-                    fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 28
-                },
-                __self: undefined,
-                children: "Edit this post"
-            }) : null,
-            post && post.isAuthor && !deletedPost ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                type: "button",
-                onClick: ()=>{
-                    _api.deletePost(postID, token).then(()=>{
-                        setDeletedPost(true);
-                    }).finally(()=>{
-                        const activePosts = posts.filter((post1)=>post1.active === true
-                        );
-                        setPosts(activePosts);
-                    });
-                },
-                __source: {
-                    fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 31
-                },
-                __self: undefined,
-                children: "DELETE THIS POST"
-            }) : null,
-            deletedPost ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                __source: {
-                    fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 50
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
-                    __source: {
-                        fileName: "src/components/SinglePostView.jsx",
-                        lineNumber: 51
-                    },
-                    __self: undefined,
-                    children: "Your post has been deleted."
-                })
-            }) : null,
-            post ? /*#__PURE__*/ _jsxRuntime.jsxs(_react.Fragment, {
-                __source: {
-                    fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 55
-                },
-                __self: undefined,
                 children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: "/posts",
+                        className: "border-2 border-red-300 rounded-lg p-1 bg-white font-bold text-red-700 hover:shadow",
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 56
+                            lineNumber: 27
                         },
                         __self: undefined,
-                        children: post ? post.title : null
+                        children: "Return to all posts"
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                    post && post.isAuthor && !deletedPost ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: `/posts/${postID}/edit`,
+                        className: "border-2 border-red-300 bg-red-300 rounded-lg p-1 font-bold text-red-700 hover:shadow hover:text-red-100",
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 57
+                            lineNumber: 34
                         },
                         __self: undefined,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("strong", {
-                                __source: {
-                                    fileName: "src/components/SinglePostView.jsx",
-                                    lineNumber: 58
-                                },
-                                __self: undefined,
-                                children: "Price:"
-                            }),
-                            " ",
-                            post ? post.price : null
-                        ]
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                        children: "Edit this post"
+                    }) : null,
+                    post && post.isAuthor && !deletedPost ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                        type: "button",
+                        className: "bg-red-700 border-2 border-red-700 p-1 rounded-lg mr-4 font-extrabold text-black hover:text-red-400 hover:shadow",
+                        onClick: ()=>{
+                            _api.deletePost(postID, token).then(()=>{
+                                setDeletedPost(true);
+                            }).finally(()=>{
+                                const activePosts = posts.filter((post1)=>post1.active === true
+                                );
+                                setPosts(activePosts);
+                            });
+                        },
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 60
+                            lineNumber: 42
                         },
                         __self: undefined,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("strong", {
-                                __source: {
-                                    fileName: "src/components/SinglePostView.jsx",
-                                    lineNumber: 61
-                                },
-                                __self: undefined,
-                                children: "Delivery available?"
-                            }),
-                            post && post.willDeliver ? " yes" : " none"
-                        ]
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs("p", {
-                        __source: {
-                            fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 64
-                        },
-                        __self: undefined,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("strong", {
-                                __source: {
-                                    fileName: "src/components/SinglePostView.jsx",
-                                    lineNumber: 65
-                                },
-                                __self: undefined,
-                                children: "Location:"
-                            }),
-                            " ",
-                            post ? post.location : null
-                        ]
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                        __source: {
-                            fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 67
-                        },
-                        __self: undefined,
-                        children: post ? post.description : null
-                    })
+                        children: "DELETE THIS POST"
+                    }) : null
                 ]
-            }) : null,
-            post && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("hr", {
                 __source: {
                     fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 72
+                    lineNumber: 62
                 },
-                __self: undefined,
-                children: "SEND A MESSAGE"
-            }) : null,
-            post && !msgSent && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx(_react.Fragment, {
+                __self: undefined
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("article", {
+                className: "space-y-6",
                 __source: {
                     fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 74
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
-                    onSubmit: (e)=>{
-                        e.preventDefault();
-                        _api.sendMessage(postID, token, message).then(()=>{
-                            setMsgSent(!msgSent);
-                            setMessage("");
-                        });
-                    },
-                    __source: {
-                        fileName: "src/components/SinglePostView.jsx",
-                        lineNumber: 75
-                    },
-                    __self: undefined,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs("label", {
-                            __source: {
-                                fileName: "src/components/SinglePostView.jsx",
-                                lineNumber: 84
-                            },
-                            __self: undefined,
-                            children: [
-                                "Message:",
-                                /*#__PURE__*/ _jsxRuntime.jsx("textarea", {
-                                    name: "message",
-                                    value: message,
-                                    onChange: (e)=>setMessage(e.target.value)
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/SinglePostView.jsx",
-                                        lineNumber: 86
-                                    },
-                                    __self: undefined
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                            type: "submit",
-                            __source: {
-                                fileName: "src/components/SinglePostView.jsx",
-                                lineNumber: 92
-                            },
-                            __self: undefined,
-                            children: "SUBMIT"
-                        })
-                    ]
-                })
-            }) : null,
-            post && !post.isAuthor && msgSent ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                __source: {
-                    fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 97
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
-                    __source: {
-                        fileName: "src/components/SinglePostView.jsx",
-                        lineNumber: 98
-                    },
-                    __self: undefined,
-                    children: "Your message has been sent"
-                })
-            }) : null,
-            post && post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                __source: {
-                    fileName: "src/components/SinglePostView.jsx",
-                    lineNumber: 103
+                    lineNumber: 63
                 },
                 __self: undefined,
                 children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                    deletedPost ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
                         __source: {
                             fileName: "src/components/SinglePostView.jsx",
-                            lineNumber: 104
+                            lineNumber: 65
                         },
                         __self: undefined,
-                        children: "Messages"
-                    }),
-                    post.messages.map((msg)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
                             __source: {
                                 fileName: "src/components/SinglePostView.jsx",
-                                lineNumber: 106
+                                lineNumber: 66
+                            },
+                            __self: undefined,
+                            children: "Your post has been deleted."
+                        })
+                    }) : null,
+                    post ? /*#__PURE__*/ _jsxRuntime.jsxs(_react.Fragment, {
+                        __source: {
+                            fileName: "src/components/SinglePostView.jsx",
+                            lineNumber: 70
+                        },
+                        __self: undefined,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                className: "mt-4 text-center text-4xl",
+                                __source: {
+                                    fileName: "src/components/SinglePostView.jsx",
+                                    lineNumber: 71
+                                },
+                                __self: undefined,
+                                children: post ? post.title : null
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                className: "text-center text-xl",
+                                __source: {
+                                    fileName: "src/components/SinglePostView.jsx",
+                                    lineNumber: 74
+                                },
+                                __self: undefined,
+                                children: post ? post.description : null
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                className: "text-2xl",
+                                __source: {
+                                    fileName: "src/components/SinglePostView.jsx",
+                                    lineNumber: 77
+                                },
+                                __self: undefined,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("strong", {
+                                        __source: {
+                                            fileName: "src/components/SinglePostView.jsx",
+                                            lineNumber: 78
+                                        },
+                                        __self: undefined,
+                                        children: "Price:"
+                                    }),
+                                    " ",
+                                    post ? post.price : null
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                className: "text-2xl",
+                                __source: {
+                                    fileName: "src/components/SinglePostView.jsx",
+                                    lineNumber: 80
+                                },
+                                __self: undefined,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("strong", {
+                                        __source: {
+                                            fileName: "src/components/SinglePostView.jsx",
+                                            lineNumber: 81
+                                        },
+                                        __self: undefined,
+                                        children: "Delivery available?"
+                                    }),
+                                    post && post.willDeliver ? " yes" : " none"
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                className: "text-2xl",
+                                __source: {
+                                    fileName: "src/components/SinglePostView.jsx",
+                                    lineNumber: 84
+                                },
+                                __self: undefined,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("strong", {
+                                        __source: {
+                                            fileName: "src/components/SinglePostView.jsx",
+                                            lineNumber: 85
+                                        },
+                                        __self: undefined,
+                                        children: "Location:"
+                                    }),
+                                    " ",
+                                    post ? post.location : null
+                                ]
+                            })
+                        ]
+                    }) : null
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("aside", {
+                __source: {
+                    fileName: "src/components/SinglePostView.jsx",
+                    lineNumber: 90
+                },
+                __self: undefined,
+                children: [
+                    post && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        __source: {
+                            fileName: "src/components/SinglePostView.jsx",
+                            lineNumber: 92
+                        },
+                        __self: undefined,
+                        children: "SEND A MESSAGE"
+                    }) : null,
+                    post && !msgSent && !post.isAuthor && token ? /*#__PURE__*/ _jsxRuntime.jsx(_react.Fragment, {
+                        __source: {
+                            fileName: "src/components/SinglePostView.jsx",
+                            lineNumber: 94
+                        },
+                        __self: undefined,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                            onSubmit: (e)=>{
+                                e.preventDefault();
+                                _api.sendMessage(postID, token, message).then(()=>{
+                                    setMsgSent(!msgSent);
+                                    setMessage("");
+                                });
+                            },
+                            __source: {
+                                fileName: "src/components/SinglePostView.jsx",
+                                lineNumber: 95
                             },
                             __self: undefined,
                             children: [
-                                /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                                /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                                     __source: {
                                         fileName: "src/components/SinglePostView.jsx",
-                                        lineNumber: 107
+                                        lineNumber: 104
                                     },
                                     __self: undefined,
                                     children: [
-                                        "From: ",
-                                        msg.fromUser.username
+                                        "Message:",
+                                        /*#__PURE__*/ _jsxRuntime.jsx("textarea", {
+                                            name: "message",
+                                            value: message,
+                                            onChange: (e)=>setMessage(e.target.value)
+                                            ,
+                                            __source: {
+                                                fileName: "src/components/SinglePostView.jsx",
+                                                lineNumber: 106
+                                            },
+                                            __self: undefined
+                                        })
                                     ]
                                 }),
-                                /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                    type: "submit",
                                     __source: {
                                         fileName: "src/components/SinglePostView.jsx",
-                                        lineNumber: 108
+                                        lineNumber: 112
                                     },
                                     __self: undefined,
-                                    children: msg.content
+                                    children: "SUBMIT"
                                 })
                             ]
-                        }, msg._id)
-                    )
+                        })
+                    }) : null,
+                    post && !post.isAuthor && msgSent ? /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                        __source: {
+                            fileName: "src/components/SinglePostView.jsx",
+                            lineNumber: 117
+                        },
+                        __self: undefined,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("em", {
+                            __source: {
+                                fileName: "src/components/SinglePostView.jsx",
+                                lineNumber: 118
+                            },
+                            __self: undefined,
+                            children: "Your message has been sent"
+                        })
+                    }) : null,
+                    post && post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        __source: {
+                            fileName: "src/components/SinglePostView.jsx",
+                            lineNumber: 123
+                        },
+                        __self: undefined,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                __source: {
+                                    fileName: "src/components/SinglePostView.jsx",
+                                    lineNumber: 124
+                                },
+                                __self: undefined,
+                                children: "Messages"
+                            }),
+                            post.messages.map((msg)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                    __source: {
+                                        fileName: "src/components/SinglePostView.jsx",
+                                        lineNumber: 126
+                                    },
+                                    __self: undefined,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsxs("h3", {
+                                            __source: {
+                                                fileName: "src/components/SinglePostView.jsx",
+                                                lineNumber: 127
+                                            },
+                                            __self: undefined,
+                                            children: [
+                                                "From: ",
+                                                msg.fromUser.username
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            __source: {
+                                                fileName: "src/components/SinglePostView.jsx",
+                                                lineNumber: 128
+                                            },
+                                            __self: undefined,
+                                            children: msg.content
+                                        })
+                                    ]
+                                }, msg._id)
+                            )
+                        ]
+                    }) : null
                 ]
-            }) : null
+            })
         ]
     }));
 };
