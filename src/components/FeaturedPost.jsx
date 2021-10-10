@@ -21,7 +21,7 @@ const FeaturedPost = (props) => {
 
   return (
     <aside className="flex flex-col items-center p-6 space-y-6 shadow-md bg-white rounded-lg">
-      <h1 className="font-extrabold text-lg">
+      <h1 className="font-extrabold text-2xl">
         {featuredPost ? featuredPost.title : null}
       </h1>
       <p className="italic p-4">

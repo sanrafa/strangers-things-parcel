@@ -102,12 +102,13 @@ const Posts = (props) => {
               ? filteredPosts.map((post) => (
                   <div
                     key={post._id}
-                    className="shadow-lg rounded-lg p-4 mb-4 bg-white"
+                    className="shadow-lg rounded-lg p-4 mb-4 bg-white space-y-4"
                   >
                     <h3 className="font-extrabold">{post.title}</h3>
                     <p>{post.description}</p>
                     {post.isAuthor === true ? (
                       <button
+                        className="bg-red-700 border-2 border-red-700 p-1 rounded-lg mr-4 font-extrabold text-black hover:text-red-400"
                         type="button"
                         onClick={() =>
                           deletePost(post._id, token).then(() => {

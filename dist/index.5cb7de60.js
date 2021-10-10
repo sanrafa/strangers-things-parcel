@@ -26568,7 +26568,7 @@ const Posts = (props)=>{
                                     ]
                                 }, post._id)
                             ) : posts && filteredPosts.length > 0 ? filteredPosts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                    className: "shadow-lg rounded-lg p-4 mb-4 bg-white",
+                                    className: "shadow-lg rounded-lg p-4 mb-4 bg-white space-y-4",
                                     __source: {
                                         fileName: "src/components/Posts.jsx",
                                         lineNumber: 103
@@ -26593,6 +26593,7 @@ const Posts = (props)=>{
                                             children: post.description
                                         }),
                                         post.isAuthor === true ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                            className: "bg-red-700 border-2 border-red-700 p-1 rounded-lg mr-4 font-extrabold text-black hover:text-red-400",
                                             type: "button",
                                             onClick: ()=>_api.deletePost(post._id, token).then(()=>{
                                                     const activePosts = posts.filter((post1)=>post1.active === true
@@ -26612,7 +26613,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 mr-6 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 125
+                                                lineNumber: 126
                                             },
                                             __self: undefined,
                                             children: "Send a message"
@@ -26622,7 +26623,7 @@ const Posts = (props)=>{
                                             className: "font-bold text-gray-500 hover:text-red-500",
                                             __source: {
                                                 fileName: "src/components/Posts.jsx",
-                                                lineNumber: 132
+                                                lineNumber: 133
                                             },
                                             __self: undefined,
                                             children: "View post"
@@ -26636,14 +26637,14 @@ const Posts = (props)=>{
                             path: `${match.path}/:postID`,
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 142
+                                lineNumber: 143
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_.FeaturedPost, {
                                 posts: posts,
                                 __source: {
                                     fileName: "src/components/Posts.jsx",
-                                    lineNumber: 143
+                                    lineNumber: 144
                                 },
                                 __self: undefined
                             })
@@ -27585,7 +27586,7 @@ const FeaturedPost = (props)=>{
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                className: "font-extrabold text-lg",
+                className: "font-extrabold text-2xl",
                 __source: {
                     fileName: "src/components/FeaturedPost.jsx",
                     lineNumber: 24
