@@ -26405,6 +26405,7 @@ var _s = $RefreshSig$();
 const Posts = (props)=>{
     _s();
     let match = _reactRouterDom.useRouteMatch();
+    const history = _reactRouterDom.useHistory();
     const [posts, setPosts] = [
         props.posts,
         props.setPosts
@@ -26429,238 +26430,231 @@ const Posts = (props)=>{
     }, [
         searchTerm
     ]);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_react.Fragment, {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("main", {
+        className: "flex flex-col items-center bg-red-50",
         __source: {
             fileName: "src/components/Posts.jsx",
-            lineNumber: 38
+            lineNumber: 39
         },
         __self: undefined,
-        children: /*#__PURE__*/ _jsxRuntime.jsxs("main", {
-            className: "flex flex-col items-center bg-red-50",
-            __source: {
-                fileName: "src/components/Posts.jsx",
-                lineNumber: 39
-            },
-            __self: undefined,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsxs("header", {
-                    className: "flex flex-col items-center",
-                    __source: {
-                        fileName: "src/components/Posts.jsx",
-                        lineNumber: 40
-                    },
-                    __self: undefined,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                            className: "font-extrabold text-5xl mt-4 mb-6",
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsxs("header", {
+                className: "flex flex-col items-center",
+                __source: {
+                    fileName: "src/components/Posts.jsx",
+                    lineNumber: 40
+                },
+                __self: undefined,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        className: "font-extrabold text-5xl mt-4 mb-6",
+                        __source: {
+                            fileName: "src/components/Posts.jsx",
+                            lineNumber: 41
+                        },
+                        __self: undefined,
+                        children: "Posts"
+                    }),
+                    token && activeUser ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: "/newpost",
+                        className: "hover:text-black border-solid border-4 rounded-lg border-red-500 p-2 mb-4 bg-red-500 text-white font-bold",
+                        __source: {
+                            fileName: "src/components/Posts.jsx",
+                            lineNumber: 43
+                        },
+                        __self: undefined,
+                        children: "Create new post"
+                    }) : null,
+                    /*#__PURE__*/ _jsxRuntime.jsx("form", {
+                        __source: {
+                            fileName: "src/components/Posts.jsx",
+                            lineNumber: 51
+                        },
+                        __self: undefined,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("input", {
+                            type: "text",
+                            placeholder: "Search",
+                            value: searchTerm,
+                            onChange: (e)=>setSearchTerm(e.target.value)
+                            ,
+                            className: "text-center p-1 mb-4 shadow-inner bg-white rounded-lg focus:shadow-lg",
                             __source: {
                                 fileName: "src/components/Posts.jsx",
-                                lineNumber: 41
+                                lineNumber: 52
                             },
-                            __self: undefined,
-                            children: "Posts"
-                        }),
-                        token && activeUser ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: "/newpost",
-                            className: "hover:text-black border-solid border-4 rounded-lg border-red-500 p-2 mb-4 bg-red-500 text-white font-bold",
-                            __source: {
-                                fileName: "src/components/Posts.jsx",
-                                lineNumber: 43
-                            },
-                            __self: undefined,
-                            children: "Create new post"
-                        }) : null,
-                        /*#__PURE__*/ _jsxRuntime.jsx("form", {
-                            __source: {
-                                fileName: "src/components/Posts.jsx",
-                                lineNumber: 51
-                            },
-                            __self: undefined,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("input", {
-                                type: "text",
-                                placeholder: "Search",
-                                value: searchTerm,
-                                onChange: (e)=>setSearchTerm(e.target.value)
-                                ,
-                                className: "text-center p-1 mb-4 shadow-inner bg-white rounded-lg focus:shadow-lg",
+                            __self: undefined
+                        })
+                    })
+                ]
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                className: "flex flex-1 items-baseline ml-4 mr-4 space-x-4",
+                __source: {
+                    fileName: "src/components/Posts.jsx",
+                    lineNumber: 61
+                },
+                __self: undefined,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("section", {
+                        className: "flex flex-col",
+                        __source: {
+                            fileName: "src/components/Posts.jsx",
+                            lineNumber: 62
+                        },
+                        __self: undefined,
+                        children: posts && !(filteredPosts.length > 0) ? posts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                className: "shadow-lg rounded-lg p-4 mb-4 bg-white",
                                 __source: {
                                     fileName: "src/components/Posts.jsx",
-                                    lineNumber: 52
+                                    lineNumber: 65
                                 },
-                                __self: undefined
-                            })
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "flex flex-1 items-baseline ml-4 mr-4 space-x-4",
-                    __source: {
-                        fileName: "src/components/Posts.jsx",
-                        lineNumber: 61
-                    },
-                    __self: undefined,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("section", {
-                            className: "flex flex-col",
-                            __source: {
-                                fileName: "src/components/Posts.jsx",
-                                lineNumber: 62
-                            },
-                            __self: undefined,
-                            children: posts && !(filteredPosts.length > 0) ? posts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                    className: "shadow-lg rounded-lg p-4 mb-4 bg-white",
-                                    __source: {
-                                        fileName: "src/components/Posts.jsx",
-                                        lineNumber: 65
-                                    },
-                                    __self: undefined,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("h3", {
-                                            className: "font-extrabold",
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 69
-                                            },
-                                            __self: undefined,
-                                            children: post.title
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 70
-                                            },
-                                            __self: undefined,
-                                            children: post.description
-                                        }),
-                                        post.isAuthor === true ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                            type: "button",
-                                            onClick: ()=>_api.deletePost(post._id, token).then(()=>{
-                                                    const activePosts = posts.filter((post1)=>post1.active === true
-                                                    );
-                                                    setPosts(activePosts);
-                                                })
-                                            ,
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 72
-                                            },
-                                            __self: undefined,
-                                            children: "DELETE"
-                                        }) : null,
-                                        activeUser && !post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                            to: `/posts/${post._id}`,
-                                            className: "font-bold text-gray-500 mr-6 hover:text-red-500",
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 87
-                                            },
-                                            __self: undefined,
-                                            children: "Send a message"
-                                        }) : null,
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                            to: `/posts/${post._id}/post`,
-                                            className: "font-bold text-gray-500 hover:text-red-500",
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 94
-                                            },
-                                            __self: undefined,
-                                            children: "View post"
-                                        })
-                                    ]
-                                }, post._id)
-                            ) : posts && filteredPosts.length > 0 ? filteredPosts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                    className: "shadow-lg rounded-lg p-4 mb-4 bg-white space-y-4",
-                                    __source: {
-                                        fileName: "src/components/Posts.jsx",
-                                        lineNumber: 104
-                                    },
-                                    __self: undefined,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("h3", {
-                                            className: "font-extrabold",
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 108
-                                            },
-                                            __self: undefined,
-                                            children: post.title
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 109
-                                            },
-                                            __self: undefined,
-                                            children: post.description
-                                        }),
-                                        post.isAuthor === true ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                            className: "bg-red-700 border-2 border-red-700 p-1 rounded-lg mr-4 font-extrabold text-black hover:text-red-400",
-                                            type: "button",
-                                            onClick: ()=>_api.deletePost(post._id, token).then(()=>{
-                                                    const activePosts = posts.filter((post1)=>post1.active === true
-                                                    );
-                                                    setPosts(activePosts);
-                                                })
-                                            ,
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 111
-                                            },
-                                            __self: undefined,
-                                            children: "DELETE"
-                                        }) : null,
-                                        activeUser && !post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                            to: `/posts/${post._id}`,
-                                            className: "font-bold text-gray-500 mr-6 hover:text-red-500",
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 127
-                                            },
-                                            __self: undefined,
-                                            children: "Send a message"
-                                        }) : null,
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                            to: `/posts/${post._id}/post`,
-                                            className: "font-bold text-gray-500 hover:text-red-500",
-                                            __source: {
-                                                fileName: "src/components/Posts.jsx",
-                                                lineNumber: 134
-                                            },
-                                            __self: undefined,
-                                            children: "View post"
-                                        })
-                                    ]
-                                }, post._id)
-                            ) : null
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                            exact: true,
-                            path: `${match.path}/:postID`,
-                            __source: {
-                                fileName: "src/components/Posts.jsx",
-                                lineNumber: 144
-                            },
-                            __self: undefined,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_.FeaturedPost, {
-                                posts: posts,
-                                featuredPost: featuredPost,
-                                setFeaturedPost: setFeaturedPost,
+                                __self: undefined,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                                        className: "font-extrabold",
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 69
+                                        },
+                                        __self: undefined,
+                                        children: post.title
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 70
+                                        },
+                                        __self: undefined,
+                                        children: post.description
+                                    }),
+                                    post.isAuthor === true ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                        type: "button",
+                                        onClick: ()=>_api.deletePost(post._id, token).then(()=>{
+                                                const allPosts = _api.fetchAllPosts(token);
+                                                allPosts.then((res)=>setPosts(res.data.posts)
+                                                );
+                                            })
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 72
+                                        },
+                                        __self: undefined,
+                                        children: "DELETE"
+                                    }) : null,
+                                    activeUser && !post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/posts/${post._id}`,
+                                        className: "font-bold text-gray-500 mr-6 hover:text-red-500",
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 85
+                                        },
+                                        __self: undefined,
+                                        children: "Send a message"
+                                    }) : null,
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/posts/${post._id}/post`,
+                                        className: "font-bold text-gray-500 hover:text-red-500",
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 92
+                                        },
+                                        __self: undefined,
+                                        children: "View post"
+                                    })
+                                ]
+                            }, post._id)
+                        ) : posts && filteredPosts.length > 0 ? filteredPosts.map((post)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                className: "shadow-lg rounded-lg p-4 mb-4 bg-white space-y-4",
                                 __source: {
                                     fileName: "src/components/Posts.jsx",
-                                    lineNumber: 145
+                                    lineNumber: 102
                                 },
-                                __self: undefined
-                            })
+                                __self: undefined,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                                        className: "font-extrabold",
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 106
+                                        },
+                                        __self: undefined,
+                                        children: post.title
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 107
+                                        },
+                                        __self: undefined,
+                                        children: post.description
+                                    }),
+                                    post.isAuthor === true ? /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                        className: "bg-red-700 border-2 border-red-700 p-1 rounded-lg mr-4 font-extrabold text-black hover:text-red-400",
+                                        type: "button",
+                                        onClick: ()=>_api.deletePost(post._id, token).finally(()=>{
+                                                const allPosts = _api.fetchAllPosts(token);
+                                                allPosts.then((res)=>setPosts(res.data.posts)
+                                                );
+                                            })
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 109
+                                        },
+                                        __self: undefined,
+                                        children: "DELETE"
+                                    }) : null,
+                                    activeUser && !post.isAuthor ? /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/posts/${post._id}`,
+                                        className: "font-bold text-gray-500 mr-6 hover:text-red-500",
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 123
+                                        },
+                                        __self: undefined,
+                                        children: "Send a message"
+                                    }) : null,
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/posts/${post._id}/post`,
+                                        className: "font-bold text-gray-500 hover:text-red-500",
+                                        __source: {
+                                            fileName: "src/components/Posts.jsx",
+                                            lineNumber: 130
+                                        },
+                                        __self: undefined,
+                                        children: "View post"
+                                    })
+                                ]
+                            }, post._id)
+                        ) : null
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        exact: true,
+                        path: `${match.path}/:postID`,
+                        __source: {
+                            fileName: "src/components/Posts.jsx",
+                            lineNumber: 140
+                        },
+                        __self: undefined,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_.FeaturedPost, {
+                            posts: posts,
+                            featuredPost: featuredPost,
+                            setFeaturedPost: setFeaturedPost,
+                            __source: {
+                                fileName: "src/components/Posts.jsx",
+                                lineNumber: 141
+                            },
+                            __self: undefined
                         })
-                    ]
-                })
-            ]
-        })
+                    })
+                ]
+            })
+        ]
     }));
 };
-_s(Posts, "Y6FDI/9sLImhd1+4NUFQHL2S7U4=", false, function() {
-    return [_reactRouterDom.useRouteMatch];
+_s(Posts, "jmxABP6ENMzve0t2H/5OX/ARdCg=", false, function() {
+    return [_reactRouterDom.useRouteMatch, _reactRouterDom.useHistory];
 });
 _c = Posts;
 exports.default = Posts;
