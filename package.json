@@ -2,7 +2,7 @@
   "name": "strangers-things-parcel",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "start": "parcel src/index.html --open",
     "build": "parcel build src/index.html"
